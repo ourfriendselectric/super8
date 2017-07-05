@@ -1,0 +1,16 @@
+footer {
+	margin-top: 40px;
+	padding: 40px 0;
+	background: #000; 
+	text-align: center;
+	font-family: AachenStd-Bold;
+	letter-spacing: 0.8px;
+	color: $super8-white;
+	a {
+		color: $super8-white;
+		&:hover {
+			color: $super8-white;
+			text-decoration: none;
+		}
+	}
+}

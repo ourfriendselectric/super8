@@ -1,6 +1,10 @@
+// SUPER 8
+$super8-red: #E84525;
+$super8-orange: #F5B541;
+$super8-white: #FBF4DC;
 
 // Body
-$body-bg: yellow;
+$body-bg: $super8-orange;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);

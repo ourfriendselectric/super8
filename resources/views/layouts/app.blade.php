@@ -11,15 +11,21 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         @yield('nav')
-        @yield('content')
+        @yield('content') 
+
+        <footer>
+            <div class="container">
+                <a href="#">terms &amp; conditions</a> &#124; <a href="#">join our mailing list</a> &#124; <a href="#">contact us</a>
+            </div>
+        </footer>
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>

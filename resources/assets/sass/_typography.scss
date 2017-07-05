@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Blacksword';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Blacksword'), local('Blacksword'), url(/fonts/Blacksword.otf) format('otf');
+}
+.blacksword {
+	font-family: 'Blacksword';
+}
+@font-face {
+  font-family: 'Eagle-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Eagle-Light'), local('Eagle-Light'), url(/fonts/Eagle-Light.otf) format('otf');
+}
+.eagle-light {
+	font-family: 'Eagle-Light';
+}
+@font-face {
+  font-family: 'AachenStd-Bold';
+  font-style: normal;
+  font-weight: 300;
+  src: local('AachenStd-Bold'), local('AachenStd-Bold'), url(/fonts/AachenStd-Bold.otf) format('otf');
+}
+.aachenstd-bold {
+	font-family: 'AachenStd-Bold';
+}
+
+body {
+	font-family: 'AachenStd-Bold';
+  font-size: 15px;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+}
