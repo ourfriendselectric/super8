@@ -11,6 +11,7 @@ header {
 	min-height: 800px;
 	background: url(/images/header.jpg) no-repeat center;
 	background-size: cover;
+	position: relative;
 	
 	.logo {
 		width: 100%;
@@ -20,10 +21,8 @@ header {
 	}
 
 	.social {
-
 		margin-top: 10px;
 		width: 100%;
-
 		@media (min-width: $screen-sm-min) {
 			margin-top: 0;
 			width: auto;
@@ -44,6 +43,39 @@ header {
 			padding: 0 5px;
 			img {
 				width: 18px;
+			}
+		}
+	}
+
+	.steps {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%; 
+		text-align: center;
+		.step {
+			margin: 0 10px;
+			display: inline-block;
+			img {
+				width: 83px;
+				margin-bottom: 20px;
+			}
+			&.download {
+				img {
+					width: 90px;
+				}
+			}
+
+			p {
+				font-size: 18px;
+				display: block;
+				background: #000;
+				color: $super8-white;
+				line-height: 1;
+				padding: 7px 15px 4px;
+				margin: 0;
+				text-transform: uppercase;
+				letter-spacing: 0.8px;
 			}
 		}
 	}

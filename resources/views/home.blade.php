@@ -14,6 +14,23 @@
                 <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
                 <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
             </div>
+
+            <div class="steps">
+                <div class="container">
+                    <div class="step watch">
+                        <img src="/images/watch.png" alt="Watch">
+                        <p>Watch the video</p>
+                    </div>
+                    <div class="step download">
+                        <img src="/images/download.png" alt="Download &amp; Register">
+                        <p>Download &amp; Register</p>
+                    </div>
+                    <div class="step upload">
+                        <img src="/images/upload.png" alt="Upload your track">
+                        <p>Upload your track</p>
+                    </div>
+                </div>
+            </div>
         </header>
 
         <div class="banner">
