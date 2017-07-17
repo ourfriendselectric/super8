@@ -35,3 +35,10 @@ h1,
 h2 {
   text-transform: uppercase;
 }
+
+h2 {
+  font-size: 28px;
+  @media (min-width: $screen-sm-min) {
+    font-size: 30px;
+  }
+}

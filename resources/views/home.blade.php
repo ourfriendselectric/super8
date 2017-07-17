@@ -16,7 +16,7 @@
             </div>
 
             <div class="steps">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="step watch">
                         <img src="/images/watch.png" alt="Watch">
                         <p>Watch the video</p>
@@ -48,7 +48,7 @@
         <section class="details">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
+                    <div class="col-md-8 col-md-offset-2">
                         <img src="/images/lightning.png" alt="" class="lightning">
                         <h2>What is Super 8</h2>
                         <p>Super 8 is music competition open to bands, composers, songwriters, bedroom producers - basically anyone who can create an origianl piece of music.</p>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
+                    <div class="col-md-8 col-md-offset-2">
                         <img src="/images/lightning.png" alt="" class="lightning">
                         <h2>The Rules</h2>
                         <p>Your song must be an original composition.<br>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
+                    <div class="col-md-8 col-md-offset-2">
                         <img src="/images/lightning.png" alt="" class="lightning">
                         <h2>How To Enter</h2>
                         <p>Register &amp; download a copy of our music video - available at the top of this page.</p>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1">
+                    <div class="col-md-10 col-md-offset-1">
                         <img src="/images/lightning.png" alt="" class="lightning">
                         <h2>Judges &amp; Prizes</h2>
                         <p>Stay tuned. Sign up to our mailing list &amp; follow us on facebook &amp; instagram for announcements.</p>
