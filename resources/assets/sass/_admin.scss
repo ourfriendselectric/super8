@@ -1,0 +1,31 @@
+.admin_body {
+	font-family: arial, helvetica;
+	background: #fff;
+
+	.navbar-default,
+	.panel-default,
+	.panel-default > .panel-heading {
+		border-color: #ccc;
+	}
+
+	.paginate {
+		width: 100%;
+		text-align: center;
+		.pagination {
+			font-family: arial, helvetica;
+			font-weight: 400;
+		}
+	}
+
+	table {
+		width: 100%;
+		td {
+			border-bottom: 1px solid #ccc;
+			padding: 10px 0;
+		}
+		tbody {
+			font-family: arial, helvetica;
+			font-weight: 400;
+		}
+	}
+}

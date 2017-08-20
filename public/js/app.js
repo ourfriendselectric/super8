@@ -785,7 +785,7 @@ window.Vue = __webpack_require__(37);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(34));
+Vue.component('users', __webpack_require__(34));
 
 var app = new Vue({
   el: '#app'
@@ -1660,10 +1660,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
+
+    data: function data() {
+        return {
+            sortKey: 'name',
+            reverse: false,
+            search: '',
+            columns: ['name', 'artist'],
+            newUser: {},
+            users: [{ name: 'John', artist: 50 }, { name: 'Jane', artist: 22 }, { name: 'Paul', artist: 34 }, { name: 'Kate', artist: 15 }, { name: 'Amanda', artist: 65 }, { name: 'Steve', artist: 38 }, { name: 'Keith', artist: 21 }, { name: 'Don', artist: 50 }, { name: 'Susan', artist: 21 }]
+        };
+    },
+
+    computed: {
+        orderedUsers: function orderedUsers() {
+            return _.orderBy(this.users, 'name');
+        }
+    },
+
+    methods: {
+        sortBy: function sortBy(sortKey) {
+            return this.users.orderBy(this.users, sortKey);
+        }
     }
 });
 
@@ -31664,9 +31691,9 @@ var Component = __webpack_require__(35)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/patrickwadden/Code/super8/resources/assets/js/components/Example.vue"
+Component.options.__file = "/Users/patrickwadden/Code/super8/resources/assets/js/components/Users.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] Users.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -31675,9 +31702,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3cfa6c09", Component.options)
+    hotAPI.createRecord("data-v-a4740132", Component.options)
   } else {
-    hotAPI.reload("data-v-3cfa6c09", Component.options)
+    hotAPI.reload("data-v-a4740132", Component.options)
   }
 })()}
 
@@ -31746,27 +31773,49 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
-}]}
+  return _c('div', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.search),
+      expression: "search"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "placeholder": "Filter users by name or age"
+    },
+    domProps: {
+      "value": (_vm.search)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.search = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('table', [_c('thead', _vm._l((_vm.columns), function(column) {
+    return _c('th', [_c('a', {
+      class: {
+        active: _vm.sortKey == column
+      },
+      attrs: {
+        "href": "#"
+      },
+      on: {
+        "click": function($event) {
+          _vm.sortBy(column)
+        }
+      }
+    }, [_vm._v("\n                    " + _vm._s(column) + "\n                ")])])
+  })), _vm._v(" "), _c('tbody', _vm._l((_vm.orderedUsers), function(user) {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(user.artist))])])
+  }))])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3cfa6c09", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-a4740132", module.exports)
   }
 }
 

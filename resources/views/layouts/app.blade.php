@@ -13,16 +13,10 @@
     <!-- Styles -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="@yield('body_class')">
     <div id="app">
         @yield('nav')
         @yield('content') 
-
-        <footer>
-            <div class="container">
-                <a href="#">terms &amp; conditions</a> &#124; <a href="#">join our mailing list</a> &#124; <a href="#">contact us</a>
-            </div>
-        </footer>
     </div>
 
     <!-- Scripts -->

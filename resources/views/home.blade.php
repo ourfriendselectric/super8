@@ -97,5 +97,11 @@
 
     </div>
 
+    <footer>
+        <div class="container">
+            <a href="#">terms &amp; conditions</a> &#124; <a href="#">join our mailing list</a> &#124; <a href="#">contact us</a>
+        </div>
+    </footer>
+
 @endsection
 

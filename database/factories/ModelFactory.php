@@ -17,8 +17,19 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,
+        'phone' => $faker->e164PhoneNumber,
+        'artist' => $faker->name,
+        'location' => $faker->city,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+$factory->define(App\Upload::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => function () {
+            return factory(App\User::class)->create()->id;
+        },
+        'filename' => $faker->shuffle('abcdefghijklmnopqrstuvwkyz1234567890'),
     ];
 });

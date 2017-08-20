@@ -30,8 +30,8 @@ class User extends Authenticatable
     /**
      * Get the uploads for the user.
      */
-    public function comments()
+    public function uploads()
     {
-        return $this->hasMany('App\Uploads');
+        return $this->hasMany('App\Upload');
     }
 }
