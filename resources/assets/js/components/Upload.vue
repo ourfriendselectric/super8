@@ -13,7 +13,7 @@
                         <input class="textbox" type="text" name="email" id="email" v-model="form.email" />
                         <label for="email">Your email</label>
                         <p class="error" v-if="errors.email !== ''">{{errors.email}}</p>
-                    </div>
+                    </div> 
                     <div class="col-sm-6">
                         <input class="textbox" type="text" name="code" id="code" v-model="form.code" />
                         <div class="tooltip-container">

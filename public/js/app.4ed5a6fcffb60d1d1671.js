@@ -1931,7 +1931,7 @@ var FileUpload = __webpack_require__("./node_modules/vue-upload-component/dist/v
         },
 
         upload: function upload(song) {
-            song[0].active = false;
+            song[0].active = true;
             song[0].data = {
                 'id': this.userId,
                 'filename': song[0].name
@@ -1972,29 +1972,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        users: Array,
+        columns: Array
+    },
 
     data: function data() {
         return {
-            sortKey: 'name',
-            reverse: false,
-            search: '',
-            columns: ['name', 'artist'],
-            newUser: {},
-            users: [{ name: 'John', artist: 50 }, { name: 'Jane', artist: 22 }, { name: 'Paul', artist: 34 }, { name: 'Kate', artist: 15 }, { name: 'Amanda', artist: 65 }, { name: 'Steve', artist: 38 }, { name: 'Keith', artist: 21 }, { name: 'Don', artist: 50 }, { name: 'Susan', artist: 21 }]
+            sortKey: '',
+            sortOrders: ['name', 'artist', 'location', 'code', 'song', 'video'],
+            searchQuery: '',
+            gridColumns: ['name', 'artist', 'location', 'code', 'song', 'video'],
+            gridData: this.users
         };
     },
 
     computed: {
-        orderedUsers: function orderedUsers() {
-            return _.orderBy(this.users, 'name');
+        filteredData: function filteredData() {
+            var sortKey = this.sortKey;
+            var filterKey = this.searchQuery && this.searchQuery.toLowerCase();
+            var order = this.sortOrders[sortKey] || 1;
+            var data = this.gridData;
+            if (filterKey) {
+                data = data.filter(function (row) {
+                    return Object.keys(row).some(function (key) {
+                        return String(row[key]).toLowerCase().indexOf(filterKey) > -1;
+                    });
+                });
+            }
+            if (sortKey) {
+                data = data.slice().sort(function (a, b) {
+                    a = a[sortKey];
+                    b = b[sortKey];
+                    return (a === b ? 0 : a > b ? 1 : -1) * order;
+                });
+            }
+            return data;
+        }
+    },
+
+    filters: {
+        capitalize: function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
         }
     },
 
     methods: {
-        sortBy: function sortBy(sortKey) {
-            return this.users.orderBy(this.users, sortKey);
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrders[key] = this.sortOrders[key] * -1;
+        },
+        test: function test(path) {
+            return "<span></span>";
         }
     }
 });
@@ -32375,7 +32418,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Your email")]), _vm._v(" "), (_vm.errors.email !== '') ? _c('p', {
     staticClass: "error"
-  }, [_vm._v(_vm._s(_vm.errors.email))]) : _vm._e()]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.errorss.email))]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "col-sm-6"
   }, [_c('input', {
     directives: [{
@@ -32540,42 +32583,67 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('input', {
+  return _c('div', [_c('form', {
+    attrs: {
+      "id": "search"
+    }
+  }, [_vm._v("\n        Search "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.search),
-      expression: "search"
+      value: (_vm.searchQuery),
+      expression: "searchQuery"
     }],
-    staticClass: "form-control",
     attrs: {
-      "placeholder": "Filter users by name or age"
+      "name": "query"
     },
     domProps: {
-      "value": (_vm.search)
+      "value": (_vm.searchQuery)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.search = $event.target.value
+        _vm.searchQuery = $event.target.value
       }
     }
-  }), _vm._v(" "), _c('table', [_c('thead', _vm._l((_vm.columns), function(column) {
-    return _c('th', [_c('a', {
+  })]), _vm._v(" "), _c('table', [_c('thead', [_c('tr', _vm._l((_vm.gridColumns), function(key) {
+    return _c('th', {
       class: {
-        active: _vm.sortKey == column
-      },
-      attrs: {
-        "href": "#"
+        active: _vm.sortKey == key
       },
       on: {
         "click": function($event) {
-          _vm.sortBy(column)
+          _vm.sortBy(key)
         }
       }
-    }, [_vm._v("\n                    " + _vm._s(column) + "\n                ")])])
-  })), _vm._v(" "), _c('tbody', _vm._l((_vm.orderedUsers), function(user) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(user.artist))])])
+    }, [_vm._v("\n                    " + _vm._s(_vm._f("capitalize")(key)) + "\n                    "), _c('span', {
+      staticClass: "arrow",
+      class: _vm.sortOrders[key] > 0 ? 'asc' : 'dsc'
+    })])
+  }))]), _vm._v(" "), _c('tbody', _vm._l((_vm.filteredData), function(entry) {
+    return _c('tr', _vm._l((_vm.gridColumns), function(key) {
+      return _c('td', [(key === 'song' && entry[key] !== '') ? _c('a', {
+        attrs: {
+          "href": '/storage/' + entry[key],
+          "download": ""
+        }
+      }, [_c('span', {
+        staticClass: "glyphicon glyphicon-save",
+        attrs: {
+          "aria-hidden": "true"
+        }
+      })]) : _vm._e(), _vm._v(" "), (key === 'video' && entry[key] !== '') ? _c('a', {
+        attrs: {
+          "href": '/storage/' + entry[key],
+          "download": ""
+        }
+      }, [_c('span', {
+        staticClass: "glyphicon glyphicon-save",
+        attrs: {
+          "aria-hidden": "true"
+        }
+      })]) : _vm._e(), _vm._v(" "), (key !== 'song' && key !== 'video') ? _c('span', [_vm._v(_vm._s(entry[key]))]) : _vm._e()])
+    }))
   }))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true

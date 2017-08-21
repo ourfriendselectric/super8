@@ -1,20 +1,32 @@
 <template>
     <div>
-        <input v-model="search" class="form-control" placeholder="Filter users by name or age">
+        <form id="search">
+            Search <input name="query" v-model="searchQuery">
+        </form>
         <table>
             <thead>
-                <th v-for="column in columns">
-                    <a href="#" v-on:click="sortBy(column)" v-bind:class="{ active: sortKey == column }">
-                        {{ column }}
-                    </a>
-                </th>
+                <tr>
+                    <th 
+                        v-for="key in gridColumns"
+                        @click="sortBy(key)"
+                        :class="{ active: sortKey == key }"
+                    >
+                        {{ key | capitalize }}
+                        <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"></span>
+                    </th>
+                </tr>
             </thead>
             <tbody>
-                <tr v-for="user in orderedUsers">
-                <!-- <tr v-for="user in users | filterBy search | orderBy sortKey reverse"> -->
-                <!-- <tr v-for="user in users"> -->
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.artist }}</td>
+                <tr v-for="entry in filteredData">
+                    <td v-for="key in gridColumns">
+                        <a v-if="key === 'song' && entry[key] !== ''" :href="entry[key]" download>
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                        </a>
+                        <a v-if="key === 'video' && entry[key] !== ''" :href="entry[key]" download>
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                        </a>
+                        <span v-if="key !== 'song' && key !== 'video'">{{ entry[key] }}</span>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -23,38 +35,73 @@
 
 <script>
     export default {
+        props: {
+            users: Array,
+            columns: Array,
+        },
 
-        data: function() {
+        data: function () {
             return {
-                sortKey: 'name',
-                reverse: false,
-                search: '',
-                columns: ['name', 'artist'],
-                newUser: {},
-                users: [
-                    { name: 'John', artist: 50 },
-                    { name: 'Jane', artist: 22 },
-                    { name: 'Paul', artist: 34 },
-                    { name: 'Kate', artist: 15 },
-                    { name: 'Amanda', artist: 65 },
-                    { name: 'Steve', artist: 38 },
-                    { name: 'Keith', artist: 21 },
-                    { name: 'Don', artist: 50 },
-                    { name: 'Susan', artist: 21 }
-                ]
-            };
+                sortKey: '',
+                sortOrders: [
+                    'name',
+                    'artist',
+                    'location',
+                    'code',
+                    'song',
+                    'video'
+                ],
+                searchQuery: '',
+                gridColumns: [
+                    'name',
+                    'artist',
+                    'location',
+                    'code',
+                    'song',
+                    'video'
+                ],
+                gridData: this.users
+            }
         },
 
         computed: {
-          orderedUsers: function () {
-            return _.orderBy(this.users, 'name')
-          }
+            filteredData: function () {
+                var sortKey = this.sortKey
+                var filterKey = this.searchQuery && this.searchQuery.toLowerCase()
+                var order = this.sortOrders[sortKey] || 1
+                var data = this.gridData
+                if (filterKey) {
+                    data = data.filter(function (row) {
+                        return Object.keys(row).some(function (key) {
+                            return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+                        })
+                    })
+                }
+                if (sortKey) {
+                    data = data.slice().sort(function (a, b) {
+                        a = a[sortKey]
+                        b = b[sortKey]
+                        return (a === b ? 0 : a > b ? 1 : -1) * order
+                    })
+                }
+                return data
+            }
+        },
+
+        filters: {
+            capitalize: function (str) {
+                return str.charAt(0).toUpperCase() + str.slice(1)
+            }
         },
 
         methods: {
-            sortBy: function(sortKey) {
-                return this.users.orderBy(this.users, sortKey)
+            sortBy: function (key) {
+                this.sortKey = key
+                this.sortOrders[key] = this.sortOrders[key] * -1
             },
+            test: function(path) {
+                return "<span></span>";
+            }
         }
     }
 </script>

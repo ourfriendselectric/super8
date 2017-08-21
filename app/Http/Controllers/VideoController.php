@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Song;
+use App\Video;
 
-class SongController extends Controller
+class VideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,16 +41,16 @@ class SongController extends Controller
         ]);
 
         if ($request->file('file')->isValid()) {
-            $path = $request->file('file')->store('songs');
+            $path = $request->file('file')->store('videos');
         } else {
             return response('There is an error with the file you have uploaded.', 500);
         }
 
-        $song = new Song;
-        $song->user_id = $request->id;
-        $song->filename = $request->filename;
-        $song->path = $path;
-        $song->save();
+        $video = new video;
+        $video->user_id = $request->id;
+        $video->filename = $request->filename;
+        $video->path = $path;
+        $video->save();
 
         return response()->json([
             'filename' => $request->filename,

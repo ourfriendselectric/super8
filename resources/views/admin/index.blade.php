@@ -10,9 +10,7 @@
                 <div class="panel-heading">Registered Users</div>
 
                 <div class="panel-body">
-
-                    <Users />
-
+                    <Users :users="{{ json_encode($users) }}" />
                 </div>
             </div>
         </div>
