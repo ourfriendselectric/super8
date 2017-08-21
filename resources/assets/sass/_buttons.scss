@@ -7,8 +7,33 @@
         background: $super8-red;
         color: $super8-white;
         &:hover {
-	        background: $super8-red;
-	        color: $super8-white;
+	        background: $super8-black;
         }
     }
+    &.black {
+        background: $super8-black;
+        color: $super8-white;
+        &:hover {
+            background: $super8-orange;
+        }
+    }
+
+    &.small {
+        font-size: 15px;
+    }
+
+    &.large {
+        width: 335px;
+        height: 60px;
+        line-height: 60px;
+        padding: 0;
+    }
+}
+
+.saving {
+    width: 335px;
+    height: 60px;
+    background: $super8-red;
+    margin-top: 40px;
+    padding-top: 10px;
 }

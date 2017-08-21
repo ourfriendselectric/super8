@@ -2,7 +2,7 @@
     <div class="register">
         <div class="trigger" v-on:click="show=!show">
             <img src="/images/download.png" alt="Download &amp; Register">
-            <button>Download &amp; Register</button>
+            <button class="btn small black">Download &amp; Register</button>
         </div>
 
         <div class="overlay" v-if="show">
@@ -60,9 +60,9 @@
                     <input type="checkbox" name="accept" id="accept" :checked="form.accept" /> <label for="accept">I have read &amp; agreed to the Terms &amp; Conditions</label><p class="error" v-if="errors.accept !== ''">{{errors.accept}}</p>
                 </div>
 
-                <button class="btn red" v-if="!saving">Register &amp; Download</button>
+                <button class="btn red large" v-if="!saving">Register &amp; Download</button>
                 <div class="saving" v-if="saving"><div class="spinner"></div></div>
-                <p v-if="error" class="error">We were unable to create an account for you. Please check the form above for errors.</p>
+                <p v-if="error" class="error">We were unable to register you. Please check the form above for errors.</p>
             </form>
 
             <div class="success" v-if="success">
@@ -70,9 +70,9 @@
                 <div class="embed-responsive embed-responsive-16by9">
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kfVsfOSbJY0?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <p>Your unique code for when you upload you video is: {{code}}</p>
-                <p>We've emailed this code to you too. You'll need this code when you upload your entry.</p>
-                <a href="/video/thisIsTheVideoFile.txt" class="btn red" download>Download Video</a>
+                <p>Your unique code for when you upload your entry is: {{code}}</p>
+                <p>We've also emailed you this code. You'll need this code when you upload your entry.</p>
+                <a href="/video/thisIsTheVideoFile.txt" class="btn red large" download>Download Video</a>
             </div>
         </div>
 
@@ -113,10 +113,6 @@
         },
 
         methods: {
-            show: function() {
-                this.show = true
-            },
-
             hide: function() {
                 this.show = false
             },
@@ -130,6 +126,7 @@
                         this.saving = false;
                         this.registering = false;
                         this.success = true;
+                        this.error = false;
                         this.code = response.data.code;
                     })
                     .catch(error => {

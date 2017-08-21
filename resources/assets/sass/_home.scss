@@ -27,6 +27,8 @@ header {
 		font-size: 22px;
 		text-align: center;
 		text-transform: uppercase;
+		position: relative;
+		z-index: 225;
 	}
 
 	.social {
@@ -98,8 +100,6 @@ header {
 
 		button {
 			display: block;
-			background: #000;
-			color: $super8-white;
 			padding: 7px 15px 4px;
 			margin: 0;
 			text-transform: uppercase;

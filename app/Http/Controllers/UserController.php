@@ -50,13 +50,13 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->phone = $request->location;
         
-        $password = str_random(10);
-        $user->password = \Hash::make($password);
+        $code = str_random(10);
+        $user->code = $code;
 
         $user->save();
 
         return response()->json([
-            'code' => $password
+            'code' => $code
         ]);
     }
 
@@ -103,5 +103,34 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Match the token with the user.
+     *
+     * @param  string  $email
+     * @param  string  $code
+     * @return \Illuminate\Http\Response
+     */
+    public function code(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'code' => 'required',
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user) {
+            return response('A user has not been registed with that email address', 422);
+        }
+
+        if ($request->code !== $user->code) {
+            return response('The code doesn\'t match the code with have.', 422);   
+        }
+
+        return response()->json([
+            'id' => $user->id
+        ]);
     }
 }

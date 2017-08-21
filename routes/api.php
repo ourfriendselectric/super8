@@ -17,4 +17,8 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+Route::middleware('api')->post('/user/code', 'UserController@code');
 Route::middleware('api')->resource('user', 'UserController');
+
+Route::middleware('api')->resource('song', 'SongController');
+Route::middleware('api')->resource('video', 'SongController');

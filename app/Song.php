@@ -4,21 +4,24 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Upload extends Model
+class Song extends Model
 {
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id', 'filename'
+        'user_id',
+        'name',
+        'filename',
     ];
 
     /**
-     * Get the user that owns the upload.
+     * Get the user that owns the song.
      */
-    public function post()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }

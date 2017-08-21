@@ -49,11 +49,7 @@
         position: absolute;
     }
 
-    &.watch {
-        padding: 0;
-        background:#000;
-        .embed-responsive {
-            margin-bottom: 0px;
-        }
+    .btn.large {
+        margin-top: 40px;
     }
 }

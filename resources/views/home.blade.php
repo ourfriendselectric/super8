@@ -24,10 +24,7 @@
                         <Register />
                     </div>
                     <div class="step upload">
-                        <div class="trigger">
-                            <img src="/images/upload.png" alt="Upload your track">
-                            <button>Upload your track</button>
-                        </div>
+                        <Upload />
                     </div>
                 </div>
             </div>

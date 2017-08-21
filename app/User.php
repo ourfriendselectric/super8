@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password', 'artist', 'location', 'phone'
+        'firstname', 'lastname', 'email', 'code', 'artist', 'location', 'phone'
     ];
 
     /**
@@ -24,14 +24,22 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'remember_token',
     ];
 
     /**
-     * Get the uploads for the user.
+     * Get the song for the user.
      */
-    public function uploads()
+    public function song()
     {
-        return $this->hasMany('App\Upload');
+        return $this->hasOne('App\Song');
+    }
+
+    /**
+     * Get the song for the user.
+     */
+    public function video()
+    {
+        return $this->hasOne('App\Video');
     }
 }
