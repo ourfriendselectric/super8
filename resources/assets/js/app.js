@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('users', require('./components/Users.vue'));
+Vue.component('register', require('./components/Register.vue'));
+Vue.component('watch', require('./components/Watch.vue'));
 
 const app = new Vue({
     el: '#app'

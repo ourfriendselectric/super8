@@ -1,0 +1,59 @@
+.background {
+	background: rgba(0,0,0,0.75);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 200;
+}
+
+.overlay {
+	background: $super8-orange; 
+	position: relative;
+    position: fixed;
+    width: 60%;
+    left: 20%;
+    z-index: 250;
+    top: 50%;
+    transform: translateY(-50%);
+	color: #fff;
+	padding: 30px 40px 60px 40px;
+	text-align: left;
+
+    .textbox {
+    	border: none;
+    	border-bottom: 2px solid #fff;
+    	background: $super8-orange;
+    	color: #fff;
+    	width: 100%;
+    	padding: 10px 0;
+    	font-size: 18px;
+        margin-top: 40px;
+    	&:focus {
+    		outline: none;
+    		box-shadown: none;
+    	}
+    }
+    
+    label {
+		margin-top: 5px;
+		text-transform: lowercase;
+		font-weight: 300;
+    }
+
+    .error {
+    	color: $super8-red;
+    	margin-top: 0px;
+        font-size: 14px;
+        position: absolute;
+    }
+
+    &.watch {
+        padding: 0;
+        background:#000;
+        .embed-responsive {
+            margin-bottom: 0px;
+        }
+    }
+}

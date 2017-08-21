@@ -1,0 +1,14 @@
+.btn {
+	@include transition();
+	font-size: 20px;
+    border-radius: 0;
+    border: none;
+    &.red {
+        background: $super8-red;
+        color: $super8-white;
+        &:hover {
+	        background: $super8-red;
+	        color: $super8-white;
+        }
+    }
+}
