@@ -100,23 +100,20 @@
                     </div>
                 </div>
             </section>
-
-            <section class="social">
-                <div class="container">
-                    <div class="row">
-                        <a href="#"><img src="/images/email.png" alt="Email"></a>
-                        <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
-                        <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
-                    </div>
-                </div>
-            </section>
         </div>
 
     </div>
 
     <footer>
         <div class="container">
-            <a href="#">terms &amp; conditions</a> &#124; <a href="#">join our mailing list</a> &#124; <a href="#">contact us</a>
+            <div class="row social">
+                <a href="#"><img src="/images/email.png" alt="Email"></a>
+                <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
+            </div>
+            <div class="row">
+                <a href="#">terms &amp; conditions</a> &#124; <a href="#">join our mailing list</a> &#124; <a href="#">contact us</a>
+            </div>
         </div>
     </footer>
 
