@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUser;
+use App\Http\Requests\CheckCode;
 use App\User;
 
 class UserController extends Controller
@@ -112,22 +113,9 @@ class UserController extends Controller
      * @param  string  $code
      * @return \Illuminate\Http\Response
      */
-    public function code(Request $request)
+    public function check(CheckCode $request)
     {
-        $this->validate($request, [
-            'email' => 'required|email',
-            'code' => 'required',
-        ]);
-
         $user = User::where('email', $request->email)->first();
-
-        if (!$user) {
-            return response('A user has not been registed with that email address', 422);
-        }
-
-        if ($request->code !== $user->code) {
-            return response('The code doesn\'t match the code with have.', 422);   
-        }
 
         return response()->json([
             'id' => $user->id

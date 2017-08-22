@@ -1741,9 +1741,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (error) {
                 _this.saving = false;
                 _this.error = true;
-                for (var i = error.response.data.length - 1; i >= 0; i--) {
-                    // console.log( error.response.data[i]);
-                }
+
+                _this.errors.firstname = error.response.data.firstname[0];
+                _this.errors.lastname = error.response.data.lastname[0];
+                _this.errors.email = error.response.data.email[0];
+                _this.errors.accept = error.response.data.accept[0];
             });
         }
     }
@@ -1866,6 +1868,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 var FileUpload = __webpack_require__("./node_modules/vue-upload-component/dist/vue-upload-component.js");
 // s70FFeh1L1
@@ -1874,7 +1878,7 @@ var FileUpload = __webpack_require__("./node_modules/vue-upload-component/dist/v
 
     data: function data() {
         return {
-            show: false,
+            show: true,
             saving: false,
             tooltip: false,
 
@@ -1910,31 +1914,52 @@ var FileUpload = __webpack_require__("./node_modules/vue-upload-component/dist/v
             this.tooltip = !this.tooltip;
         },
 
-        login: function login() {
+        check: function check() {
             var _this = this;
 
-            this.saving = true;
-
-            axios.post('api/user/code', this.form).then(function (response) {
-                _this.saving = false;
+            axios.post('api/user/check', this.form).then(function (response) {
                 _this.loggedIn = true;
                 _this.error = false;
 
                 _this.userId = response.data.id;
             }).catch(function (error) {
-                _this.saving = false;
                 _this.error = true;
-                for (var i = error.response.data.length - 1; i >= 0; i--) {
-                    // console.log( error.response.data[i]);
-                }
+
+                _this.errors.email = error.response.data.email[0];
             });
         },
 
-        upload: function upload(song) {
-            song[0].active = true;
-            song[0].data = {
+        login: function login() {
+            var _this2 = this;
+
+            this.saving = true;
+
+            axios.post('api/user/check', this.form).then(function (response) {
+                _this2.saving = false;
+                _this2.loggedIn = true;
+                _this2.error = false;
+
+                _this2.userId = response.data.id;
+
+                if (_this2.song.length > 0) {
+                    _this2.$refs.songUpload.active = true;
+                }
+
+                if (_this2.video.length > 0) {
+                    _this2.$refs.videoUpload.active = true;
+                }
+            }).catch(function (error) {
+                _this2.saving = false;
+                _this2.error = true;
+
+                _this2.errors.email = error.response.data.email[0];
+            });
+        },
+
+        upload: function upload(asset) {
+            asset[0].data = {
                 'id': this.userId,
-                'filename': song[0].name
+                'filename': asset[0].name
             };
         }
     }
@@ -32310,7 +32335,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "spinner"
   })]) : _vm._e(), _vm._v(" "), (_vm.error) ? _c('p', {
-    staticClass: "error"
+    staticClass: "error",
+    staticStyle: {
+      "margin-top": "5px"
+    }
   }, [_vm._v("We were unable to register you. Please check the form above for errors.")]) : _vm._e()]) : _vm._e(), _vm._v(" "), (_vm.success) ? _c('div', {
     staticClass: "success"
   }, [_c('h2', [_vm._v("Thank you for registering")]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('p', [_vm._v("Your unique code for when you upload your entry is: " + _vm._s(_vm.code))]), _vm._v(" "), _c('p', [_vm._v("We've also emailed you this code. You'll need this code when you upload your entry.")]), _vm._v(" "), _c('a', {
@@ -32375,7 +32403,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn small black"
   }, [_vm._v("Upload your track")])]), _vm._v(" "), (_vm.show) ? _c('div', {
     staticClass: "overlay"
-  }, [_c('form', {
+  }, [_c('h4', [_vm._v("1. Your Email Address.")]), _vm._v(" "), _c('form', {
     attrs: {
       "method": "POST",
       "action": "/api/user/upload"
@@ -32383,7 +32411,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "submit": function($event) {
         $event.preventDefault();
-        _vm.login()
+        _vm.check()
       }
     }
   }, [_c('div', {
@@ -32399,7 +32427,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "textbox",
     attrs: {
-      "type": "text",
+      "type": "email",
       "name": "email",
       "id": "email"
     },
@@ -32412,70 +32440,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.form.email = $event.target.value
       }
     }
-  }), _vm._v(" "), _c('label', {
-    attrs: {
-      "for": "email"
-    }
-  }, [_vm._v("Your email")]), _vm._v(" "), (_vm.errors.email !== '') ? _c('p', {
+  }), _vm._v(" "), (_vm.errors.email !== '') ? _c('p', {
     staticClass: "error"
-  }, [_vm._v(_vm._s(_vm.errors.email))]) : _vm._e()]), _vm._v(" "), _c('div', {
-    staticClass: "col-sm-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.form.code),
-      expression: "form.code"
-    }],
-    staticClass: "textbox",
-    attrs: {
-      "type": "text",
-      "name": "code",
-      "id": "code"
-    },
-    domProps: {
-      "value": (_vm.form.code)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.form.code = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "tooltip-container"
-  }, [_c('label', {
-    attrs: {
-      "for": "code"
-    }
-  }, [_vm._v("Registration code")]), _vm._v(" "), (_vm.tooltip) ? _c('span', {
-    staticClass: "tooltip-content"
-  }, [_vm._v("This is the code we sent to you when you registered.")]) : _vm._e(), _vm._v(" "), _c('span', _vm._g({
-    staticClass: "glyphicon glyphicon-question-sign",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }, {
-    mouseenter: _vm.toggleTooltip,
-    mouseleave: _vm.toggleTooltip
-  }))]), _vm._v(" "), (_vm.errors.code !== '') ? _c('p', {
-    staticClass: "error"
-  }, [_vm._v(_vm._s(_vm.errors.code))]) : _vm._e()]), _vm._v(" "), (!_vm.loggedIn) ? _c('div', {
-    staticClass: "col-sm-12"
-  }, [(!_vm.saving) ? _c('button', {
-    staticClass: "btn red large"
-  }, [_vm._v("Upload My Entry")]) : _vm._e(), _vm._v(" "), (_vm.saving) ? _c('div', {
-    staticClass: "saving"
-  }, [_c('div', {
-    staticClass: "spinner"
-  })]) : _vm._e(), _vm._v(" "), (_vm.error) ? _c('p', {
-    staticClass: "error"
-  }, [_vm._v("Error.")]) : _vm._e()]) : _vm._e()])]), _vm._v(" "), (_vm.loggedIn) ? _c('div', {
+  }, [_vm._v(_vm._s(_vm.errors.email))]) : _vm._e()]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('h4', [_vm._v("2. Payment.")]), _vm._v(" "), _vm._m(1)]), _vm._v(" "), _c('h4', [_vm._v("3. Upload.")]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-6"
   }, [_c('file-upload', {
-    staticClass: "btn red small song",
+    ref: "songUpload",
+    staticClass: "btn black small song",
     attrs: {
       "post-action": "/api/song"
     },
@@ -32493,7 +32466,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("\n                Upload Song\n                ")]), _vm._v(" "), (_vm.song.length === 0) ? _c('label', [_vm._v(".aiff or .mp3 (Song only)")]) : _vm._e(), _vm._v(" "), (_vm.song.length !== 0) ? _c('div', [_c('label', {
     staticClass: "truncate"
-  }, [_vm._v("\n                        " + _vm._s(_vm.song[0].name)), _c('br'), _vm._v("\n                        Progress: " + _vm._s(Math.round(_vm.song[0].progress)) + "%"), _c('br')]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                        " + _vm._s(_vm.song[0].name)), _c('br'), _vm._v(" "), (!_vm.$refs.songUpload.active) ? _c('span', [_vm._v("Ready")]) : _vm._e(), _vm._v(" "), (_vm.$refs.songUpload.active) ? _c('span', [_vm._v("Progress: " + _vm._s(Math.round(_vm.song[0].progress)) + "%")]) : _vm._e(), _c('br')]), _vm._v(" "), _c('div', {
     staticClass: "progress"
   }, [_c('div', {
     staticClass: "progress-bar",
@@ -32519,7 +32492,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" We've received your song.")]) : _vm._e()]) : _vm._e()], 1), _vm._v(" "), _c('div', {
     staticClass: "col-sm-6"
   }, [_c('file-upload', {
-    staticClass: "btn red small video",
+    ref: "videoUpload",
+    staticClass: "btn black small video",
     attrs: {
       "post-action": "/api/video"
     },
@@ -32537,7 +32511,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("\n                Upload Video\n                ")]), _vm._v(" "), (_vm.video.length === 0) ? _c('label', [_vm._v(".mp4 or .mov (Song synced to the video)")]) : _vm._e(), _vm._v(" "), (_vm.video.length !== 0) ? _c('div', [_c('label', {
     staticClass: "truncate"
-  }, [_vm._v("\n                        " + _vm._s(_vm.video[0].name)), _c('br'), _vm._v("\n                        Progress: " + _vm._s(Math.round(_vm.video[0].progress)) + "%"), _c('br')]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                        " + _vm._s(_vm.video[0].name)), _c('br'), _vm._v(" "), (!_vm.$refs.videoUpload.active) ? _c('span', [_vm._v("Ready")]) : _vm._e(), _vm._v(" "), (_vm.$refs.videoUpload.active) ? _c('span', [_vm._v("Progress: " + _vm._s(Math.round(_vm.song[0].progress)) + "%")]) : _vm._e(), _c('br')]), _vm._v(" "), _c('div', {
     staticClass: "progress"
   }, [_c('div', {
     staticClass: "progress-bar",
@@ -32560,7 +32534,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  }), _vm._v(" We've received your video.")]) : _vm._e()]) : _vm._e()], 1)]) : _vm._e()]) : _vm._e(), _vm._v(" "), (_vm.show) ? _c('div', {
+  }), _vm._v(" We've received your video.")]) : _vm._e()]) : _vm._e()], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-12"
+  }, [(!_vm.saving) ? _c('button', {
+    staticClass: "btn red large"
+  }, [_vm._v("Upload My Entry")]) : _vm._e(), _vm._v(" "), (_vm.saving) ? _c('div', {
+    staticClass: "saving"
+  }, [_c('div', {
+    staticClass: "spinner"
+  })]) : _vm._e()])])]) : _vm._e(), _vm._v(" "), (_vm.show) ? _c('div', {
     staticClass: "background",
     on: {
       "click": function($event) {
@@ -32568,7 +32552,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }) : _vm._e()])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-sm-6"
+  }, [_c('p', [_vm._v("If you have not registered yet, you can do so "), _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("here")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-6"
+  }, [_c('button', {
+    staticClass: "btn black small btn-block"
+  }, [_vm._v("Pay Entry Fee")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -32624,7 +32624,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('tr', _vm._l((_vm.gridColumns), function(key) {
       return _c('td', [(key === 'song' && entry[key] !== '') ? _c('a', {
         attrs: {
-          "href": '/storage/' + entry[key],
+          "href": entry[key],
           "download": ""
         }
       }, [_c('span', {
@@ -32634,7 +32634,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       })]) : _vm._e(), _vm._v(" "), (key === 'video' && entry[key] !== '') ? _c('a', {
         attrs: {
-          "href": '/storage/' + entry[key],
+          "href": entry[key],
           "download": ""
         }
       }, [_c('span', {
