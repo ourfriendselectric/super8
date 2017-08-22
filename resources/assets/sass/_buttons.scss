@@ -32,6 +32,16 @@
             width: 335px;
         }
     }
+
+    &:active {
+        &:focus {
+            outline: none;
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+
 }
 
 .saving {

@@ -8,7 +8,7 @@
 
         <div class="overlay" v-if="show">
             <h4>1. Your Email Address.</h4>
-            <form method="POST" action="/api/user/upload" @submit.prevent="check()">
+            <form method="POST" action="/api/user/upload" @submit.prevent="pay()">
             <div class="row">
                 <div class="col-sm-6">
                     <input class="textbox" type="email" name="email" id="email" v-model="form.email" />
@@ -24,6 +24,9 @@
             <div class="row">
                 <div class="col-sm-6">
                     <button class="btn black small btn-block">Pay Entry Fee</button>
+                </div>
+                <div class="col-sm-6">
+                    <p v-if="payed">Payed</p>
                 </div>
             </div>
             </form>
@@ -44,8 +47,8 @@
                     <div v-if="song.length !== 0">
                         <label class="truncate">
                             {{ song[0].name }}<br/>
-                            <span v-if="!$refs.songUpload.active">Ready</span>
-                            <span v-if="$refs.songUpload.active">Progress: {{ Math.round(song[0].progress) }}%</span><br/>
+                            <span v-if="song[0].progress === '0.00'">Ready</span>
+                            <span v-if="song[0].progress !== '0.00'">Progress: {{ Math.round(song[0].progress) }}%</span><br/>
                         </label>
                         <div class="progress">
                             <div 
@@ -77,8 +80,8 @@
                     <div v-if="video.length !== 0">
                         <label class="truncate">
                             {{ video[0].name }}<br/>
-                            <span v-if="!$refs.videoUpload.active">Ready</span>
-                            <span v-if="$refs.videoUpload.active">Progress: {{ Math.round(song[0].progress) }}%</span><br/>
+                            <span v-if="video[0].progress === '0.00'">Ready</span>
+                            <span v-if="video[0].progress !== '0.00'">Progress: {{ Math.round(video[0].progress) }}%</span><br/>
                         </label>
                         <div class="progress">
                             <div 
@@ -100,8 +103,9 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <button class="btn red large" v-if="!saving">Upload My Entry</button>
+                    <button class="btn red large" v-if="!saving" @click.prevent="submit()">Upload My Entry</button>
                     <div class="saving" v-if="saving"><div class="spinner"></div></div>
+                    <p class="error" v-if="error">{{error}}</p>
                 </div>
             </div>
         </div>
@@ -123,9 +127,10 @@
                 tooltip: false,
 
                 loggedIn: false,
+                payed: false,
                 userId: '',
 
-                error: false,
+                error: '',
                 song: [],
                 video: [],
                 form: {
@@ -156,48 +161,36 @@
                 this.tooltip = !this.tooltip
             },
 
-            check: function() {
+            pay: function() {
                 axios.post('api/user/check', this.form)
                     .then(response => {
                         this.loggedIn = true;
                         this.error = false;
 
                         this.userId = response.data.id;
+
+                        this.payed = true;
                     })
                     .catch(error => {
-                        this.error = true;
-
                         this.errors.email = error.response.data.email[0];
                     });
             },
 
-            login: function() {
+            submit: function() {
+                if(!this.payed) {
+                    this.error = 'You must pay your entrance fee before you can submit your entry.';
+                    return;
+                }
 
-                this.saving = true;
+                if(this.song.length > 0) {
+                    this.$refs.songUpload.active = true
+                }
 
-                axios.post('api/user/check', this.form)
-                    .then(response => {
-                        this.saving = false;
-                        this.loggedIn = true;
-                        this.error = false;
+                if(this.video.length > 0) {
+                    this.$refs.videoUpload.active = true
+                }
 
-                        this.userId = response.data.id;
-
-                        if(this.song.length > 0) {
-                            this.$refs.songUpload.active = true;
-                        }
-
-                         if(this.video.length > 0) {
-                            this.$refs.videoUpload.active = true;
-                        }
-                    })
-                    .catch(error => {
-                        this.saving = false;
-                        this.error = true;
-
-                        this.errors.email = error.response.data.email[0];
-                    });   
-
+                // this.saving = true;
             },
 
             upload: function(asset) {
