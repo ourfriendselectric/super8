@@ -23,17 +23,25 @@
     }
 
     &.large {
-        width: 335px;
         height: 60px;
         line-height: 60px;
         padding: 0;
+
+        width: 100%;
+        @media (min-width: $screen-sm-min) {
+            width: 335px;
+        }
     }
 }
 
 .saving {
-    width: 335px;
     height: 60px;
     background: $super8-red;
     margin-top: 40px;
     padding-top: 10px;
+
+    width: 100%;
+    @media (min-width: $screen-sm-min) {
+        width: 335px;
+    }
 }

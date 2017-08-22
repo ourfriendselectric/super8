@@ -7,44 +7,36 @@
 
 
         <div class="overlay" v-if="show">
-            <form method="POST" action="/api/user/upload" @submit.prevent="login()">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <input class="textbox" type="text" name="email" id="email" v-model="form.email" />
-                        <label for="email">Your email</label>
-                        <p class="error" v-if="errors.email !== ''">{{errors.email}}</p>
-                    </div> 
-                    <div class="col-sm-6">
-                        <input class="textbox" type="text" name="code" id="code" v-model="form.code" />
-                        <div class="tooltip-container">
-                            <label for="code">Registration code</label>
-                            <span v-if="tooltip" class="tooltip-content">This is the code we sent to you when you registered.</span>
-                            <span class="glyphicon glyphicon-question-sign" 
-                                aria-hidden="true" 
-                                v-on="{ 
-                                    mouseenter: toggleTooltip, 
-                                    mouseleave: toggleTooltip }
-                                ">
-                            </span>
-                        </div>
-                        <p class="error" v-if="errors.code !== ''">{{errors.code}}</p>
-                    </div>
-
-                    <div class="col-sm-12" v-if="!loggedIn">
-                        <button class="btn red large" v-if="!saving">Upload My Entry</button>
-                        <div class="saving" v-if="saving"><div class="spinner"></div></div>
-                        <p v-if="error" class="error">Error.</p>
-                    </div>
+            <h4>1. Your Email Address.</h4>
+            <form method="POST" action="/api/user/upload" @submit.prevent="check()">
+            <div class="row">
+                <div class="col-sm-6">
+                    <input class="textbox" type="email" name="email" id="email" v-model="form.email" />
+                    <p class="error" v-if="errors.email !== ''">{{errors.email}}</p>
+                </div> 
+                <div class="col-sm-6">
+                    <p>If you have not registered yet, you can do so <a href="#">here</a></p>
                 </div>
+            </div>
+            
+
+            <h4>2. Payment.</h4>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button class="btn black small btn-block">Pay Entry Fee</button>
+                </div>
+            </div>
             </form>
 
-            <div class="row" v-if="loggedIn">
+            <h4>3. Upload.</h4>
+            <div class="row">
                 <div class="col-sm-6">
                     <file-upload
-                        class="btn red small song"
+                        class="btn black small song"
                         v-model="song"
                         post-action="/api/song"
                         @input="upload(song)"
+                        ref="songUpload"
                     >
                     Upload Song
                     </file-upload>
@@ -52,7 +44,8 @@
                     <div v-if="song.length !== 0">
                         <label class="truncate">
                             {{ song[0].name }}<br/>
-                            Progress: {{ Math.round(song[0].progress) }}%<br/>
+                            <span v-if="!$refs.songUpload.active">Ready</span>
+                            <span v-if="$refs.songUpload.active">Progress: {{ Math.round(song[0].progress) }}%</span><br/>
                         </label>
                         <div class="progress">
                             <div 
@@ -72,10 +65,11 @@
                 </div>
                 <div class="col-sm-6">
                     <file-upload
-                        class="btn red small video"
+                        class="btn black small video"
                         v-model="video"
                         post-action="/api/video"
                         @input="upload(video)"
+                        ref="videoUpload"
                     >
                     Upload Video
                     </file-upload>
@@ -83,7 +77,8 @@
                     <div v-if="video.length !== 0">
                         <label class="truncate">
                             {{ video[0].name }}<br/>
-                            Progress: {{ Math.round(video[0].progress) }}%<br/>
+                            <span v-if="!$refs.videoUpload.active">Ready</span>
+                            <span v-if="$refs.videoUpload.active">Progress: {{ Math.round(song[0].progress) }}%</span><br/>
                         </label>
                         <div class="progress">
                             <div 
@@ -102,6 +97,13 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <button class="btn red large" v-if="!saving">Upload My Entry</button>
+                    <div class="saving" v-if="saving"><div class="spinner"></div></div>
+                </div>
+            </div>
         </div>
 
         <div class="background" v-on:click="hide()" v-if="show"></div>
@@ -116,7 +118,7 @@
 
         data: function() {
             return {
-                show: false,
+                show: true,
                 saving: false,
                 tooltip: false,
 
@@ -154,33 +156,54 @@
                 this.tooltip = !this.tooltip
             },
 
-            login: function() {
-
-                this.saving = true;
-
-                axios.post('api/user/code', this.form)
+            check: function() {
+                axios.post('api/user/check', this.form)
                     .then(response => {
-                        this.saving = false;
                         this.loggedIn = true;
                         this.error = false;
 
                         this.userId = response.data.id;
                     })
                     .catch(error => {
+                        this.error = true;
+
+                        this.errors.email = error.response.data.email[0];
+                    });
+            },
+
+            login: function() {
+
+                this.saving = true;
+
+                axios.post('api/user/check', this.form)
+                    .then(response => {
+                        this.saving = false;
+                        this.loggedIn = true;
+                        this.error = false;
+
+                        this.userId = response.data.id;
+
+                        if(this.song.length > 0) {
+                            this.$refs.songUpload.active = true;
+                        }
+
+                         if(this.video.length > 0) {
+                            this.$refs.videoUpload.active = true;
+                        }
+                    })
+                    .catch(error => {
                         this.saving = false;
                         this.error = true;
-                        for (var i = error.response.data.length - 1; i >= 0; i--) {
-                            // console.log( error.response.data[i]);
-                        }
+
+                        this.errors.email = error.response.data.email[0];
                     });   
 
             },
 
-            upload: function(song) {
-                song[0].active = true;
-                song[0].data = {
+            upload: function(asset) {
+                asset[0].data = {
                     'id': this.userId,
-                    'filename': song[0].name,
+                    'filename': asset[0].name,
                 };
             }
         }

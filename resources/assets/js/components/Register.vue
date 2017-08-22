@@ -62,7 +62,7 @@
 
                 <button class="btn red large" v-if="!saving">Register &amp; Download</button>
                 <div class="saving" v-if="saving"><div class="spinner"></div></div>
-                <p v-if="error" class="error">We were unable to register you. Please check the form above for errors.</p>
+                <p v-if="error" class="error" style="margin-top: 5px;">We were unable to register you. Please check the form above for errors.</p>
             </form>
 
             <div class="success" v-if="success">
@@ -132,9 +132,11 @@
                     .catch(error => {
                         this.saving = false;
                         this.error = true;
-                        for (var i = error.response.data.length - 1; i >= 0; i--) {
-                            // console.log( error.response.data[i]);
-                        }
+
+                        this.errors.firstname = error.response.data.firstname[0];
+                        this.errors.lastname = error.response.data.lastname[0];
+                        this.errors.email = error.response.data.email[0];
+                        this.errors.accept = error.response.data.accept[0];
                     });   
 
             },
