@@ -1974,7 +1974,7 @@ var FileUpload = __webpack_require__(46);
 
     data: function data() {
         return {
-            show: true,
+            show: false,
             saving: false,
             tooltip: false,
 

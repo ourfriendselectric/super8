@@ -122,7 +122,7 @@
 
         data: function() {
             return {
-                show: true,
+                show: false,
                 saving: false,
                 tooltip: false,
 
