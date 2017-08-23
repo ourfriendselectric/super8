@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Storage;
 use App\Song;
 
 class SongController extends Controller
@@ -41,7 +42,8 @@ class SongController extends Controller
         ]);
 
         if ($request->file('file')->isValid()) {
-            $path = $request->file('file')->store('songs');
+            $filename = $request->file('file')->store('public/songs');
+            $path = Storage::url($filename);
         } else {
             return response('There is an error with the file you have uploaded.', 500);
         }
