@@ -49,7 +49,7 @@ class VideoController extends Controller
         }
 
         $video = new video;
-        $video->user_id = $request->id;
+        $video->registration_id = $request->id;
         $video->filename = $request->filename;
         $video->path = $path;
         $video->save();

@@ -11,7 +11,7 @@
 .overlay {
 	background: $super8-orange; 
     z-index: 250;
-	color: #fff;
+	color: $super8-white;
     text-align: left;
 
     position: absolute;
@@ -40,9 +40,9 @@
 
     .textbox {
     	border: none;
-    	border-bottom: 2px solid #fff;
+    	border-bottom: 2px solid $super8-white;
     	background: $super8-orange;
-    	color: #fff;
+    	color: $super8-white;
     	width: 100%;
     	padding: 10px 0;
 
@@ -61,22 +61,22 @@
     
     label {
 		margin-top: 5px;
-		text-transform: lowercase;
 		font-weight: 300;
-
         font-size: 13px;
-        @media (min-width: $screen-md-min) {
-            font-size: 15px;
-        }
     }
 
-    .error {
+    .error,
+    .success {
     	color: $super8-red;
     	margin-top: 0px;
         font-size: 14px;
         position: absolute;
         font-weight: bold;
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    .success {
+        color: $super8-white;
     }
 
     .btn.large {

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUser extends FormRequest
+class CheckRegistration extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,9 @@ class StoreUser extends FormRequest
     public function messages()
     {
         return [
-            'firstname.required' => 'We require your first name.',
-            'lastname.required' => 'We require your last name.',
             'email.required' => 'We require your email address.',
-            'email.unique' => 'That email address has already been used.',
             'email.email' => 'Your email address is not valid.',
-            'accept.accepted' => 'You must accept our Terms & Conditions.',
+            'email.exists' => 'We can\'t find a registration with that email address.',
         ];
     }
 
@@ -41,10 +38,7 @@ class StoreUser extends FormRequest
     public function rules()
     {
         return [
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'email' => 'required|unique:users|email',
-            'accept' => 'accepted',
+            'email' => 'required|email|exists:registrations',
         ];
     }
 }

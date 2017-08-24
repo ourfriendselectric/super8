@@ -26,11 +26,19 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
 $factory->define(App\Upload::class, function (Faker\Generator $faker) {
     return [
         'user_id' => function () {
             return factory(App\User::class)->create()->id;
         },
         'filename' => $faker->shuffle('abcdefghijklmnopqrstuvwkyz1234567890'),
+    ];
+});
+
+$factory->define(App\Discount::class, function (Faker\Generator $faker) {
+    return [
+        'code' => $faker->word,
+        'amount' => $faker->numberBetween(10, 30),
     ];
 });

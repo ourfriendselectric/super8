@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'code', 'artist', 'location', 'phone'
+        'name', 'email', 'password',
     ];
 
     /**
@@ -24,22 +24,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'remember_token',
+        'password', 'remember_token',
     ];
-
-    /**
-     * Get the song for the user.
-     */
-    public function song()
-    {
-        return $this->hasOne('App\Song');
-    }
-
-    /**
-     * Get the song for the user.
-     */
-    public function video()
-    {
-        return $this->hasOne('App\Video');
-    }
 }

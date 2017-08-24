@@ -49,7 +49,7 @@ class SongController extends Controller
         }
 
         $song = new Song;
-        $song->user_id = $request->id;
+        $song->registration_id = $request->id;
         $song->filename = $request->filename;
         $song->path = $path;
         $song->save();

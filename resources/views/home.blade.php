@@ -24,7 +24,7 @@
                         <Register />
                     </div>
                     <div class="step upload">
-                        <Upload />
+                        <Upload url="{{ env('APP_URL') }}" />
                     </div>
                 </div>
             </div>

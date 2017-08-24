@@ -19,10 +19,10 @@ class Video extends Model
     ];
 
     /**
-     * Get the user that owns the song.
+     * Get the registration that owns the song.
      */
-    public function user()
+    public function registration()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Registration');
     }
 }

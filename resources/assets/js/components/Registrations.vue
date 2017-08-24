@@ -36,7 +36,7 @@
 <script>
     export default {
         props: {
-            users: Array,
+            registrations: Array,
             columns: Array,
         },
 
@@ -45,22 +45,28 @@
                 sortKey: '',
                 sortOrders: [
                     'name',
+                    'email',
+                    'phone',
                     'artist',
                     'location',
                     'code',
+                    'paid',
                     'song',
                     'video'
                 ],
                 searchQuery: '',
                 gridColumns: [
                     'name',
+                    'email',
+                    'phone',
                     'artist',
                     'location',
                     'code',
+                    'paid',
                     'song',
                     'video'
                 ],
-                gridData: this.users
+                gridData: this.registrations
             }
         },
 

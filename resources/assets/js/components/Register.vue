@@ -57,7 +57,7 @@
                         <p>Necessitatibus odio at consectetur qui sunt omnis, nemo maiores. Numquam, quibusdam, asperiores ut, ullam fugiat veritatis corrupti ipsam iusto dolorum, sit officia nostrum! Sed vel odio labore a, placeat reprehenderit.</p>
                         <p>Nam debitis, molestias neque maiores numquam animi ab, distinctio, expedita officiis dolor labore ex! Tempora, est corporis modi iusto quam ullam sint suscipit quidem facere. Aperiam ipsum excepturi modi aliquam.</p>
                     </div>
-                    <input type="checkbox" name="accept" id="accept" :checked="form.accept" /> <label for="accept">I have read &amp; agreed to the Terms &amp; Conditions</label><p class="error" v-if="errors.accept !== ''">{{errors.accept}}</p>
+                    <input type="checkbox" name="accept" id="accept" :checked="form.accept" v-model="form.accept" /> <label for="accept">I have read &amp; agreed to the Terms &amp; Conditions</label><p class="error" v-if="errors.accept !== ''">{{errors.accept}}</p>
                 </div>
 
                 <button class="btn red large" v-if="!saving">Register &amp; Download</button>
@@ -65,13 +65,11 @@
                 <p v-if="error" class="error" style="margin-top: 5px;">We were unable to register you. Please check the form above for errors.</p>
             </form>
 
-            <div class="success" v-if="success">
+            <div v-if="success">
                 <h2>Thank you for registering</h2>
                 <div class="embed-responsive embed-responsive-16by9">
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kfVsfOSbJY0?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <p>Your unique code for when you upload your entry is: {{code}}</p>
-                <p>We've also emailed you this code. You'll need this code when you upload your entry.</p>
                 <a href="/video/thisIsTheVideoFile.txt" class="btn red large" download>Download Video</a>
             </div>
         </div>
@@ -121,7 +119,7 @@
 
                 this.saving = true;
 
-                axios.post('api/user', this.form)
+                axios.post('api/registration', this.form)
                     .then(response => {
                         this.saving = false;
                         this.registering = false;
@@ -133,10 +131,10 @@
                         this.saving = false;
                         this.error = true;
 
-                        this.errors.firstname = error.response.data.firstname[0];
-                        this.errors.lastname = error.response.data.lastname[0];
-                        this.errors.email = error.response.data.email[0];
-                        this.errors.accept = error.response.data.accept[0];
+                        this.errors.firstname = error.response.data.hasOwnProperty("firstname") ? error.response.data.firstname[0] : '';
+                        this.errors.lastname = error.response.data.hasOwnProperty("lastname") ? error.response.data.lastname[0] : '';
+                        this.errors.email = error.response.data.hasOwnProperty("email") ? error.response.data.email[0] : '';
+                        this.errors.accept = error.response.data.hasOwnProperty("accept") ? error.response.data.accept[0] : '';
                     });   
 
             },

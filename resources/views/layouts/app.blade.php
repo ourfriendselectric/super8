@@ -15,7 +15,6 @@
 </head>
 <body class="@yield('body_class')">
     <div id="app">
-        @yield('nav')
         @yield('content') 
     </div>
 

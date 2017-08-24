@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Registered Users</div>
+                <div class="panel-heading">Registrations</div>
 
                 <div class="panel-body">
-                    <Users :users="{{ json_encode($users) }}" />
+                    <Registrations :registrations="{{ json_encode($registrations) }}" />
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 .btn {
+    font-family: "aachenstd-bold";
 	@include transition();
 	font-size: 20px;
     border-radius: 0;
@@ -20,6 +21,15 @@
 
     &.small {
         font-size: 15px;
+    }
+
+    &.outline {
+        border: 2px solid $super8-black;
+        color: $super8-black;
+        background: $super8-orange;
+        &:hover {
+            color: $super8-white;
+        }
     }
 
     &.large {
@@ -53,5 +63,14 @@
     width: 100%;
     @media (min-width: $screen-sm-min) {
         width: 335px;
+    }
+
+    &.small {
+        height: 36px;
+        padding: 0;
+        .spinner {
+            width: 36px;
+            height: 36px;
+        }
     }
 }

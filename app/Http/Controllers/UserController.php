@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreUser;
-use App\Http\Requests\CheckCode;
 use App\User;
 
 class UserController extends Controller
@@ -35,30 +33,9 @@ class UserController extends Controller
      * @param  \Http\Requests\StoreUser  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreUser $request)
+    public function store(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
-
-        if($user) {
-            return response('That email address is already taken', 422);
-        }
-
-        $user = new User;
-        $user->firstname = $request->firstname;
-        $user->lastname = $request->lastname;
-        $user->artist = $request->artist;
-        $user->location = $request->location;
-        $user->email = $request->email;
-        $user->phone = $request->location;
-        
-        $code = str_random(10);
-        $user->code = $code;
-
-        $user->save();
-
-        return response()->json([
-            'code' => $code
-        ]);
+        //
     }
 
     /**
@@ -104,21 +81,5 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    /**
-     * Match the token with the user.
-     *
-     * @param  string  $email
-     * @param  string  $code
-     * @return \Illuminate\Http\Response
-     */
-    public function check(CheckCode $request)
-    {
-        $user = User::where('email', $request->email)->first();
-
-        return response()->json([
-            'id' => $user->id
-        ]);
     }
 }

@@ -17,8 +17,12 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::middleware('api')->post('/user/check', 'UserController@check');
-Route::middleware('api')->resource('user', 'UserController');
+Route::middleware('api')->post('/registration/code', 'RegistrationController@code');
+Route::middleware('api')->post('/registration/check', 'RegistrationController@check');
+Route::middleware('api')->resource('registration', 'RegistrationController');
+
+Route::middleware('api')->post('/discount/check', 'DiscountController@check');
+Route::middleware('api')->resource('discount', 'DiscountController');
 
 Route::middleware('api')->resource('song', 'SongController');
 Route::middleware('api')->resource('video', 'VideoController');
