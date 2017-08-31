@@ -77,41 +77,8 @@
             </div>
             </form>
 
-            <h4>3. Upload Your Entry</h4>
+            <h4>3. Upload Your Video</h4>
             <div class="row">
-                <div class="col-sm-6">
-                    <file-upload
-                        class="btn black small song"
-                        v-model="song"
-                        post-action="/api/song"
-                        @input="upload(song)"
-                        ref="songUpload"
-                    >
-                    Upload Song
-                    </file-upload>
-                    <label v-if="song.length === 0">.aiff or .mp3 (Song only)</label>
-                    <div v-if="song.length !== 0">
-                        <label class="truncate upload-asset-details">
-                            {{ song[0].name }}<br/><br/>
-                            <span v-if="song[0].progress === '0.00'">Ready to upload</span>
-                            <span v-if="song[0].progress !== '0.00'">Progress: {{ Math.round(song[0].progress) }}%</span><br/>
-                        </label>
-                        <div class="progress">
-                            <div 
-                                class="progress-bar" 
-                                role="progressbar"
-                                :aria-valuenow="song[0].progress" 
-                                aria-valuemin="0" 
-                                aria-valuemax="100" 
-                                style="width: 60%;"
-                                :style="{width: song[0].progress + '%'}"
-                            >
-                            </div>
-                        </div>
-                        <p class="error" v-if="song[0].error">Error: {{ song[0].error }}</p>
-                        <p v-if="song[0].success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> We've received your song.</p>
-                    </div>
-                </div>
                 <div class="col-sm-6">
                     <file-upload
                         class="btn black small video"
@@ -120,7 +87,7 @@
                         @input="upload(video)"
                         ref="videoUpload"
                     >
-                    Upload Video
+                    Choose your video
                     </file-upload>
                     <label v-if="video.length === 0">.mp4 or .mov (Song synced to the video)</label>
                     <div v-if="video.length !== 0">
@@ -145,6 +112,9 @@
                         <p v-if="video[0].success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> We've received your video.</p>
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <p class="success" v-if="success">Thank you for your entry. Please leave your browser window open while the upload completes. Once it's completed, you can close your browser window.</p>
+                </div>
             </div>
 
             <div class="row">
@@ -152,7 +122,6 @@
                     <button class="btn red large" v-if="!saving" @click.prevent="submitEntry()">Upload My Entry</button>
                     <div class="saving" v-if="saving"><div class="spinner"></div></div>
                     <p class="error" v-if="error">{{error}}</p>
-                    <p class="success" v-if="success">{{success}}</p>
                 </div>
             </div>
         </div>
@@ -199,7 +168,7 @@
                 video: [],
 
                 error: '',
-                success: '',
+                success: false,
             };
         },
 
@@ -333,7 +302,7 @@
                     this.$refs.videoUpload.active = true
                 }
 
-                this.success = 'Thank you for your entry. Please leave your browser window open while the uploads complete. Once they are completed, you can close your browser window.'
+                this.success = true;
             },
         }
     }

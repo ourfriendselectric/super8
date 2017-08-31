@@ -4,37 +4,13 @@
 
     <div class="content">
         
-        <header>
-            <div class="logo">
-                <img src="/images/logo.png" alt="Super8" width="190px">
-            </div>
-
-            <div class="social">
-                <a href="#"><img src="/images/email.png" alt="Email"></a>
-                <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
-            </div>
-
-            <div class="steps">
-                <div class="container-fluid">
-                    <div class="step watch">
-                        <Watch />
-                    </div>
-                    <div class="step download">
-                        <Register />
-                    </div>
-                    <div class="step upload">
-                        <Upload url="{{ env('APP_URL') }}" />
-                    </div>
-                </div>
-            </div>
-        </header>
+        <Hero url="{{ env('APP_URL') }}"></Hero>
 
         <div class="banner">
 
             <div class="rotate">
                 <div class="dates">
-                    <span class="title">Video Available 20.06.2017</span> <span class="date">Deadline 03.07.2017</span>
+                    <span class="title">Video Available 20.06.2017</span> <span class="date">Deadline 01.09.2017</span>
                 </div>
             </div>
 
