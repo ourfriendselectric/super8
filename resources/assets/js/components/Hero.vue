@@ -1,6 +1,6 @@
 <template>
     <header :style="{ 'background-image': 'url(' + backgroundImage + ')' }">
-        <div class="logo">
+        <div class="super8">
             <img src="/images/logo.png" alt="Super8" width="190px">
         </div>
 

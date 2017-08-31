@@ -22,7 +22,7 @@ header {
 		
 	}
 	
-	.logo {
+	.super8 {
 		width: 100%;
 		font-size: 22px;
 		text-align: center;
@@ -261,6 +261,35 @@ header {
 		padding: 0 5px;
 		img {
 			width: 18px;
+		}
+	}
+}
+
+.logos {
+	text-align: center;
+	.logo {
+		display: inline-block;
+		margin: 0 10px;
+		img {
+			&.ofe {
+				width: 100px;
+				margin-top: 30px;
+				margin-bottom: 10px;
+			}
+			&.apra {
+				width: 160px;
+				margin-top: 10px;
+				margin-bottom: 30px;
+			}
+		}
+		p {
+			font-family: "Eagle-Light", Arial, "Helvetica Neue", Helvetica, sans-serif;
+			text-transform: uppercase;
+			color: #fff;
+		}
+		&:hover {
+			color: #fff;
+			text-decoration: none;
 		}
 	}
 }

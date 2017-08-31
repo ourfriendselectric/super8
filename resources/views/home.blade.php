@@ -74,6 +74,18 @@
                             <p>Stay tuned. Sign up to our mailing list &amp; follow us on facebook &amp; instagram for announcements.</p>
                         </div>
                     </div>
+                    <div class="row logos">
+                        <div class="col-md-10 col-md-offset-1">
+                            <a href="http://ourfriendselectric.com.au" target="_blank" class="logo">
+                                <img class="ofe" src="/images/logos/ofe.png" />
+                                <p>Foundation Partner</p>
+                            </a>
+                            <a href="http://apraamcos.com.au/" target="_blank" class="logo">
+                                <img class="apra" src="/images/logos/apra.png" />
+                                <p>Supporting Partner</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
