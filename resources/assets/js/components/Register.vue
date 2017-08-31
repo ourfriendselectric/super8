@@ -70,7 +70,7 @@
                 <div class="embed-responsive embed-responsive-16by9">
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kfVsfOSbJY0?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <a href="/video/thisIsTheVideoFile.txt" class="btn red large" download>Download Video</a>
+                <a href="/video/super8musicvideo.mp4" class="btn red large" download>Download Video</a>
             </div>
         </div>
 
