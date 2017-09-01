@@ -36,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" @submit.prevent="makePayment()" ref="paypalbutton">
+                    <form :action="paypal" method="post" target="_top" @submit.prevent="makePayment()" ref="paypalbutton">
                         <input type="hidden" name="item_name" :value="itemName">
                         <input type="hidden" name="amount" :value="price - discountAmount">
                         <input type="hidden" name="return" :value="returnUrl">
@@ -135,7 +135,10 @@
 
     export default {
 
-        props: ['url'],
+        props: {
+            url: String,
+            paypal: String,
+        },
 
         data: function() {
             return {

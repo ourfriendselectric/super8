@@ -19,7 +19,10 @@
                     <Register />
                 </div>
                 <div class="step upload">
-                    <Upload :url="url" />
+                    <Upload 
+                        :url="url" 
+                        :paypal="paypal" 
+                    />
                 </div>
             </div>
         </div>
@@ -48,6 +51,7 @@
 
         props: {
             url: String,
+            paypal: String,
         },
 
         components: {

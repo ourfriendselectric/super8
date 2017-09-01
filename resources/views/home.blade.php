@@ -4,7 +4,10 @@
 
     <div class="content">
         
-        <Hero url="{{ env('APP_URL') }}"></Hero>
+        <Hero 
+            url="{{ env('APP_URL') }}"
+            paypal="{{ env('PAYPAL_URL') }}"
+        ></Hero>
 
         <div class="banner">
 

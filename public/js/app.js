@@ -2090,7 +2090,10 @@ var FileUpload = __webpack_require__(50);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-    props: ['url'],
+    props: {
+        url: String,
+        paypal: String
+    },
 
     data: function data() {
         return {
@@ -32862,7 +32865,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('form', {
     ref: "paypalbutton",
     attrs: {
-      "action": "https://www.sandbox.paypal.com/cgi-bin/webscr",
+      "action": _vm.paypal,
       "method": "post",
       "target": "_top"
     },
@@ -46834,6 +46837,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -46850,7 +46856,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     props: {
-        url: String
+        url: String,
+        paypal: String
     },
 
     components: {
@@ -46920,7 +46927,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "step upload"
   }, [_c('Upload', {
     attrs: {
-      "url": _vm.url
+      "url": _vm.url,
+      "paypal": _vm.paypal
     }
   })], 1)])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
