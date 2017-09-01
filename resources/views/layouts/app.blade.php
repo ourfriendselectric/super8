@@ -20,12 +20,12 @@
         <footer>
             <div class="container">
                 <div class="row social">
-                    <a href="#"><img src="/images/email.png" alt="Email"></a>
-                    <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
+                    <a href="mailto:entries@super8musicvideo.com"><img src="/images/email.png" alt="Email"></a>
+                    <a href="https://www.facebook.com/Super8MusicVideo/"><img src="/images/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/super8musicvideo/"><img src="/images/instagram.png" alt="Instagram"></a>
                 </div>
                 <div class="row">
-                    <a href="#">terms &amp; conditions</a> &#124; <a href="#">join our mailing list</a> &#124; <a href="#">contact us</a>
+                    <Termspopup></Termspopup> &#124; <a href="#">join our mailing list</a> &#124; <a href="#">contact us</a>
                 </div>
             </div>
         </footer>

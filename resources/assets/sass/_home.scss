@@ -233,6 +233,14 @@ header {
 		color: $super8-red;
 	}
 
+	a {
+		color: $super8-red;
+		&:hover {
+			color: $super8-red;
+			text-decoration: underline;
+		}
+	}
+
 	.social {
 		margin-top: 50px;
 		width: 100%;

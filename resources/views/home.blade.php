@@ -13,7 +13,7 @@
 
             <div class="rotate">
                 <div class="dates">
-                    <span class="title">Video Available 04.09.2017</span> <span class="date">Deadline 01.11.2017</span>
+                    <span class="title">Entries Now Open</span> <span class="date">Deadline November 1<sup>st</sup></span>
                 </div>
             </div>
 
@@ -28,10 +28,13 @@
                         <div class="col-md-8 col-md-offset-2">
                             <img src="/images/lightning.png" alt="" class="lightning">
                             <h2>What is Super 8</h2>
-                            <p>Super 8 is music competition open to bands, composers, songwriters, bedroom producers - basically anyone who can create an origianl piece of music.</p>
-                            <p>We have recorded a music video for your composition to be written and tracked to. Your entry will be judged not only on how good the tune is, however also on how well the song compliments the video and the story within.</p>
-                            <p>The comp culminates with a live awards and performance evening at Sydney's Oxford Art Factory where the top, or 'Super' 8  finalists perform their tracks to a panel of industry heavy weights including artists, producers, sound engineers and label heads.</p>
-                            <p>The comp is split into two categories, 'performance' and 'non performance'. Basically if you need a 24 piece orchestra to perform your track, or have electronically created a bunch of samples featuring a sped up humming bird or the sound of a catepillar crying you go into the 'non performance' category.</p>
+                            <p>Super 8 is a music based composition, competition.</p>
+                            <p>Rolls off the tongue doesn’t it.</p>
+                            <p>So what are we on about?</p>
+                            <p>We have recorded a video for you to create the music for. You then get to keep it if you win.</p>
+                            <p>It’s pretty simple and the prize pool is awesome.</p>
+                            <p>No matter how you play, who you play with or the genre you dig you’re eligible. Basically we’re after anyone who can create an original piece of music while being mindful that it complements the video we’ve shot.</p>
+                            <p>Super 8 culminates with a live event experience with the short-listed finalists either playing live to the video on the night or, if based on your musical approach and output you can’t perform live, a playback in front of a panel of esteemed industry judges. The event will take place at one of Sydney’s leading independent music venues in late November 2017.</p>
                         </div>
                     </div>
                 </div>
@@ -43,12 +46,11 @@
                         <div class="col-md-8 col-md-offset-2">
                             <img src="/images/lightning.png" alt="" class="lightning">
                             <h2>The Rules</h2>
-                            <p>Your song must be an original composition.<br>
-                            It cannot have been entered in another competition previously or used commercially.<br>
-                            If you have written and recorded a song but not yet released it, this is your perfect opportunity!</p>
-                            <p>This competition is about composing a piece of music to match a video.</p>
-                            <p>Your composition must tell the story of the video. It must also be mixed, mastered &amp; synced to the video.</p>
-                            Super 8 is open to Australian Citizens &amp; Permanent Residence.</p>
+                            <p>Your song must be an original composition and not be available publicly to listen to or download until the day after the live final.</p>
+                            <p>As a result it cannot have been entered into another competition prior to Super 8.<br/>
+                            Please mix, master and sync your song to the video prior to upload.<br/>
+                            Super 8 is open to Australian Citizens and Permanent Residents.<br/>
+                            Please see the full list of terms of conditions via the link below.</p>
                         </div>
                     </div>
                 </div>
@@ -60,9 +62,9 @@
                         <div class="col-md-8 col-md-offset-2">
                             <img src="/images/lightning.png" alt="" class="lightning">
                             <h2>How To Enter</h2>
-                            <p>Register &amp; download a copy of our music video - available at the top of this page.</p>
-                            <p>Once your track is ready, upload a copy in the required file formats, select if your track can or cannot be performed live and you are good to go.</p>
-                            <p>There is a one off entry fee of $55 per song entered.</p>
+                            <p>Register &amp; download a copy of the music video via the link at the top of the page.<p>
+                            <p>Once your track is ready, upload a copy in the required file formats, selecting the performance category.</p>
+                            <p>There is a one off entry fee of $55 per song entered with a discount for APRA members.</p>
                         </div>
                     </div>
                 </div>
@@ -74,7 +76,14 @@
                         <div class="col-md-10 col-md-offset-1">
                             <img src="/images/lightning.png" alt="" class="lightning">
                             <h2>Judges &amp; Prizes</h2>
-                            <p>Stay tuned. Sign up to our mailing list &amp; follow us on facebook &amp; instagram for announcements.</p>
+                            <p>1. Perform Live at Super 8<br/>
+                            2. The music video - yours to keep no strings attached<br/>
+                            3. Your next EP, Single or Album designed by the Our Friends Electric Creative Studio - this includes designs for merchandise and your branding - again yours to keep no strings attached<br/>
+                            4. Two days in a recording studio to get your next EP, Single or Album underway!<br/>
+                            5. Two days of Mixing, Mastering or Recording with one of our judges<br/>
+                            7. Promo Photoshoot <br/>
+                            6. $2000 cash!<br/></p>
+                            <p>Stay tuned for the Judges Announcement. Sign up to our mailing list &amp; follow us on Facebook &amp; Instagram for updates.</p>
                         </div>
                     </div>
                     <div class="row logos">

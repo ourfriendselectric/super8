@@ -17,6 +17,7 @@ window.Vue = require('vue');
 Vue.component('registrations', require('./components/Registrations.vue'));
 Vue.component('hero', require('./components/Hero.vue'));
 Vue.component('terms', require('./components/Terms.vue'));
+Vue.component('termspopup', require('./components/termspopup.vue'));
 
 const app = new Vue({
     el: '#app'

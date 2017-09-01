@@ -844,6 +844,7 @@ window.Vue = __webpack_require__(51);
 Vue.component('registrations', __webpack_require__(42));
 Vue.component('hero', __webpack_require__(64));
 Vue.component('terms', __webpack_require__(67));
+Vue.component('termspopup', __webpack_require__(70));
 
 var app = new Vue({
   el: '#app'
@@ -1817,7 +1818,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Terms: __WEBPACK_IMPORTED_MODULE_0__Terms_vue___default.a
     },
 
-    computed: {},
+    created: function created() {
+        // has the user been sent here via the PayPal redirect?
+        var url = location.search;
+        var urlParams = {};
+        url.replace(new RegExp("([^?=&]+)(=([^&]*))?", "g"), function ($0, $1, $2, $3) {
+            urlParams[$1] = $3;
+        });
+        if (urlParams.hasOwnProperty("register")) {
+            this.show = true;
+            window.history.pushState({}, document.title, "/");
+        }
+    },
+
 
     methods: {
         hide: function hide() {
@@ -1953,8 +1966,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -32710,7 +32721,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('iframe', {
     staticClass: "embed-responsive-item",
     attrs: {
-      "src": "https://www.youtube.com/embed/kfVsfOSbJY0?rel=0&showinfo=0?ecver=1",
+      "src": "https://www.youtube.com/embed/_P4hYwff3T0?rel=0&showinfo=0?ecver=1",
       "frameborder": "0",
       "allowfullscreen": ""
     }
@@ -32850,7 +32861,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.userForm.email = $event.target.value
       }
     }
-  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('div', {
     staticClass: "col-sm-12"
   }, [(_vm.emailError !== '') ? _c('p', {
     staticClass: "error"
@@ -33013,7 +33024,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('label', [_vm._v("Discount code")])]), _vm._v(" "), _c('div', {
     staticClass: "col-sm-4 apply-discount"
   }, [_c('button', {
-    staticClass: "btn outline small",
+    staticClass: "btn black small",
     on: {
       "click": function($event) {
         $event.preventDefault();
@@ -33106,13 +33117,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }) : _vm._e()])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-sm-6"
-  }, [_c('p', [_vm._v("If you have not registered yet, you can do so "), _c('a', {
+  return _c('p', {
+    staticClass: "note"
+  }, [_vm._v("If you have not registered yet, you can do so "), _c('a', {
     attrs: {
-      "href": "#"
+      "href": "/?register=true"
     }
-  }, [_vm._v("here")])])])
+  }, [_vm._v("here")]), _vm._v(".")])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -33159,7 +33170,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('iframe', {
     staticClass: "embed-responsive-item",
     attrs: {
-      "src": "https://www.youtube.com/embed/kfVsfOSbJY0?rel=0&showinfo=0?ecver=1",
+      "src": "https://www.youtube.com/embed/_P4hYwff3T0?rel=0&showinfo=0?ecver=1",
       "frameborder": "0",
       "allowfullscreen": ""
     }
@@ -46966,7 +46977,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "social"
   }, [_c('a', {
     attrs: {
-      "href": "#"
+      "href": "mailto:entries@super8musicvideo.com"
     }
   }, [_c('img', {
     attrs: {
@@ -46975,7 +46986,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('a', {
     attrs: {
-      "href": "#"
+      "href": "https://www.facebook.com/Super8MusicVideo/"
     }
   }, [_c('img', {
     attrs: {
@@ -46984,7 +46995,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('a', {
     attrs: {
-      "href": "#"
+      "href": "https://www.instagram.com/super8musicvideo/"
     }
   }, [_c('img', {
     attrs: {
@@ -47529,6 +47540,125 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-1259e366", module.exports)
+  }
+}
+
+/***/ }),
+/* 69 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Terms_vue__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Terms_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Terms_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    data: function data() {
+        return {
+            show: true
+        };
+    },
+
+    components: {
+        Terms: __WEBPACK_IMPORTED_MODULE_0__Terms_vue___default.a
+    },
+
+    computed: {},
+
+    methods: {
+        hide: function hide() {
+            this.show = false;
+        }
+    }
+});
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(69),
+  /* template */
+  __webpack_require__(71),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/patrickwadden/Code/super8/resources/assets/js/components/termspopup.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] termspopup.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3eaf4116", Component.options)
+  } else {
+    hotAPI.reload("data-v-3eaf4116", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "termspopup"
+  }, [_c('span', {
+    on: {
+      "click": function($event) {
+        _vm.show = !_vm.show
+      }
+    }
+  }, [_vm._v("terms & conditions")]), _vm._v(" "), (_vm.show) ? _c('div', {
+    staticClass: "overlay"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "terms"
+  }, [_c('Terms')], 1)])]) : _vm._e(), _vm._v(" "), (_vm.show) ? _c('div', {
+    staticClass: "background",
+    on: {
+      "click": function($event) {
+        _vm.show = !_vm.show
+      }
+    }
+  }) : _vm._e()])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-3eaf4116", module.exports)
   }
 }
 

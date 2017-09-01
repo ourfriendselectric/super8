@@ -11,10 +11,8 @@
             <div class="row">
                 <div class="col-sm-6">
                     <input class="textbox" type="email" name="email" id="email" v-model="userForm.email" />
+                    <p class="note">If you have not registered yet, you can do so <a href="/?register=true">here</a>.</p>
                 </div> 
-                <div class="col-sm-6">
-                    <p>If you have not registered yet, you can do so <a href="#">here</a></p>
-                </div>
                 <div class="col-sm-12">
                     <p class="error" v-if="emailError !== ''">{{emailError}}</p>
                 </div>
@@ -64,7 +62,7 @@
                             <label>Discount code</label>
                         </div>
                         <div class="col-sm-4 apply-discount">
-                            <button @click.prevent="applyDiscount()" class="btn outline small">Apply</button>
+                            <button @click.prevent="applyDiscount()" class="btn black small">Apply</button>
                         </div>
                         <div class="col-sm-12">
                             <p class="error" v-if="discountError !== ''">{{discountError}}</p>

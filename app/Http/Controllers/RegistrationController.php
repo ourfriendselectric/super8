@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreRegistration;
 use App\Http\Requests\CheckRegistration;
 
+use App\Mail\Registered;
+use Illuminate\Support\Facades\Mail;
+
 class RegistrationController extends Controller
 {
     /**
@@ -74,6 +77,8 @@ class RegistrationController extends Controller
         $registration->code = $code;
 
         $registration->save();
+
+        //Mail::to($request->email)->send(new Registered);
 
         return response()->json([
             'code' => $code

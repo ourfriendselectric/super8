@@ -59,7 +59,7 @@
             <div v-if="success">
                 <h2>Thank you for registering</h2>
                 <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kfVsfOSbJY0?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_P4hYwff3T0?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <a href="/video/super8musicvideo.mp4" class="btn red large" download>Download Video</a>
             </div>
@@ -104,8 +104,20 @@
             Terms,
         },
 
-        computed: {
-
+        created() {
+            // has the user been sent here via the PayPal redirect?
+            const url = location.search;
+            let urlParams = {};
+                url.replace(
+                    new RegExp("([^?=&]+)(=([^&]*))?", "g"),
+                    function($0, $1, $2, $3) {
+                    urlParams[$1] = $3;
+                }
+            );
+            if (urlParams.hasOwnProperty("register")) {
+                this.show = true;
+                window.history.pushState({}, document.title, "/");
+            }
         },
 
         methods: {
