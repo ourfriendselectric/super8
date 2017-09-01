@@ -1,5 +1,5 @@
 <template>
-    <header :style="{ 'background-image': 'url(' + backgroundImage + ')' }">
+    <header>
         <div class="super8">
             <img src="/images/logo.png" alt="Super8" width="190px">
         </div>
@@ -26,6 +26,12 @@
                 </div>
             </div>
         </div>
+
+        <video autoplay loop id="video-background" muted plays-inline :poster="backgroundImage">
+            <source src="/images/hero/background.mp4" type="video/mp4" />
+            <img :src="backgroundImage" />
+        </video>
+
     </header>
 </template>
 

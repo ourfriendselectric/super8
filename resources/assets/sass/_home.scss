@@ -8,7 +8,6 @@ $rotation: -6deg;
 
 header {
 	min-height: 800px;
-	background: url(/images/header.jpg) no-repeat center;
 	background-size: cover;
 	position: relative;
 	padding: 50px 0 150px;
@@ -114,6 +113,19 @@ header {
 				text-decoration: none;
 			}
 		}
+	}
+
+	/* The only rule that matters */
+	#video-background {
+	/*  making the video fullscreen  */
+	  position: absolute;
+	  right: 0; 
+	  bottom: 0;
+	  min-width: 100%; 
+	  min-height: 100%;
+	  width: auto; 
+	  height: auto;
+	  z-index: -100;
 	}
 }
 

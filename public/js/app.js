@@ -46840,6 +46840,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -46911,11 +46917,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('header', {
-    style: ({
-      'background-image': 'url(' + _vm.backgroundImage + ')'
-    })
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+  return _c('header', [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
     staticClass: "steps"
   }, [_c('div', {
     staticClass: "container-fluid"
@@ -46930,7 +46932,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "url": _vm.url,
       "paypal": _vm.paypal
     }
-  })], 1)])])])
+  })], 1)])]), _vm._v(" "), _c('video', {
+    attrs: {
+      "autoplay": "",
+      "loop": "",
+      "id": "video-background",
+      "muted": "",
+      "plays-inline": "",
+      "poster": _vm.backgroundImage
+    }
+  }, [_c('source', {
+    attrs: {
+      "src": "/images/hero/background.mp4",
+      "type": "video/mp4"
+    }
+  }), _vm._v(" "), _c('img', {
+    attrs: {
+      "src": _vm.backgroundImage
+    }
+  })])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "super8"

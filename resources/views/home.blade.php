@@ -13,7 +13,7 @@
 
             <div class="rotate">
                 <div class="dates">
-                    <span class="title">Video Available 20.06.2017</span> <span class="date">Deadline 01.09.2017</span>
+                    <span class="title">Video Available 04.09.2017</span> <span class="date">Deadline 01.11.2017</span>
                 </div>
             </div>
 
