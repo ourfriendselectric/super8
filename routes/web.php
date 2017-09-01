@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/terms', function () {
+    return view('terms');
+});
+
 Auth::routes();
 
 Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function () {

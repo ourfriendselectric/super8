@@ -46,16 +46,7 @@
                 <div class="terms_conditions">
                     <label>Terms &amp; Conditions</label>
                     <div class="terms">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem porro, corrupti commodi totam doloremque exercitationem facere ipsam, aspernatur accusamus officia voluptatibus ad culpa saepe ratione! Est reiciendis ducimus quibusdam impedit.</p>
-                        <p>Iste saepe a delectus eum, assumenda iusto porro cum deleniti, laborum ullam beatae alias, ipsum impedit repellendus necessitatibus quasi illo. Enim minus rerum vero at dolores accusamus aperiam eum soluta.</p>
-                        <p>Non error tenetur, quos vel optio quibusdam a nemo ut aut, asperiores dolores sapiente et sint iste, natus tempore deserunt mollitia. Itaque nam reprehenderit quod ad, consequatur voluptatem suscipit. Voluptatibus.</p>
-                        <p>Molestias ab voluptate iste placeat magnam numquam hic soluta dicta eius deserunt recusandae praesentium sunt alias nam officiis natus rem quae voluptatibus nemo accusamus, error in nostrum animi. Repellat, officia!</p>
-                        <p>Delectus perferendis ea laboriosam molestiae. Repellat ad, soluta natus incidunt saepe totam fugit doloribus eligendi numquam expedita quis facilis error. Iusto quae enim nihil recusandae quis, vero odio voluptas aliquid.</p>
-                        <p>Iusto, fugiat, facere. Nihil fugit fuga magnam commodi autem nesciunt assumenda architecto perspiciatis beatae vel provident, eaque maiores labore adipisci harum corporis modi quis ipsam! Nisi atque fuga velit ipsam.</p>
-                        <p>Accusantium, libero molestiae minus. Totam minus dolorem, inventore impedit ipsum laborum accusamus eum distinctio molestias sint aliquid pariatur dolore libero maxime quae praesentium eveniet ex soluta fuga, tempore, quas amet.</p>
-                        <p>In hic, laboriosam quis totam labore est, perspiciatis. Dolore aperiam quas adipisci commodi at magni, dolor, facilis nulla saepe accusamus mollitia cum totam quae a voluptatem molestias autem, ut nobis.</p>
-                        <p>Necessitatibus odio at consectetur qui sunt omnis, nemo maiores. Numquam, quibusdam, asperiores ut, ullam fugiat veritatis corrupti ipsam iusto dolorum, sit officia nostrum! Sed vel odio labore a, placeat reprehenderit.</p>
-                        <p>Nam debitis, molestias neque maiores numquam animi ab, distinctio, expedita officiis dolor labore ex! Tempora, est corporis modi iusto quam ullam sint suscipit quidem facere. Aperiam ipsum excepturi modi aliquam.</p>
+                        <Terms />
                     </div>
                     <input type="checkbox" name="accept" id="accept" :checked="form.accept" v-model="form.accept" /> <label for="accept">I have read &amp; agreed to the Terms &amp; Conditions</label><p class="error" v-if="errors.accept !== ''">{{errors.accept}}</p>
                 </div>
@@ -79,6 +70,9 @@
 </template>
 
 <script>
+
+    import Terms from './Terms.vue'
+
     export default {
 
         data: function() {
@@ -104,6 +98,10 @@
                     accept: '',
                 },
             };
+        },
+
+        components: {
+            Terms,
         },
 
         computed: {
