@@ -37,6 +37,15 @@
         left: 20%;
     }
 
+    .close {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        color: $super8-orange;
+        opacity: 1;
+        text-shadow: none;
+    }
+
 
     .textbox {
     	border: none;

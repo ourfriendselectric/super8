@@ -51,7 +51,6 @@
                     'location',
                     'code',
                     'paid',
-                    'song',
                     'video'
                 ],
                 searchQuery: '',
@@ -63,7 +62,6 @@
                     'location',
                     'code',
                     'paid',
-                    'song',
                     'video'
                 ],
                 gridData: this.registrations

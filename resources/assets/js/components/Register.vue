@@ -6,6 +6,7 @@
         </div>
 
         <div class="overlay" v-if="show">
+            <span v-on:click="show=!show" class="glyphicon glyphicon-remove close" aria-hidden="true"></span>
             <form method="POST" action="/api/user" @submit.prevent="register()" v-if="registering">
                 <div class="row">
                     <div class="col-sm-6">

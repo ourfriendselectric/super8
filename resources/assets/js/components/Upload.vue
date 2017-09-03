@@ -5,8 +5,8 @@
             <button class="btn small black">Upload your track</button>
         </div>
 
-
         <div class="overlay" v-if="show">
+            <span v-on:click="show=!show" class="glyphicon glyphicon-remove close" aria-hidden="true"></span>
             <h4>1. Enter Your Email Address</h4>
             <div class="row">
                 <div class="col-sm-6">
@@ -32,8 +32,10 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-sm-6">
+
                     <form :action="paypal" method="post" target="_top" @submit.prevent="makePayment()" ref="paypalbutton">
                         <input type="hidden" name="item_name" :value="itemName">
                         <input type="hidden" name="amount" :value="price - discountAmount">
@@ -41,7 +43,7 @@
                         <input type="hidden" name="cancel_return" :value="cancelReturnUrl">
 
                         <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="SEVMNCQ4JYVBN">
+                        <input type="hidden" name="business" value="K99UHHXJ7F8AL">
                         <input type="hidden" name="lc" value="AU">
                         <input type="hidden" name="item_number" value="super8">
                         <input type="hidden" name="currency_code" value="AUD">

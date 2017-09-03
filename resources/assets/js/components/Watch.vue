@@ -6,6 +6,7 @@
         </div>
 
         <div class="overlay" v-if="show">
+            <span v-on:click="show=!show" class="glyphicon glyphicon-remove close" aria-hidden="true"></span>
             <div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_P4hYwff3T0?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
             </div>
