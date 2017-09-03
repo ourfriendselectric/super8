@@ -63,7 +63,8 @@
                             <img src="/images/lightning.png" alt="" class="lightning">
                             <h2>How To Enter</h2>
                             <p>Register &amp; download a copy of the music video via the link at the top of the page.<p>
-                            <p>Once your track is ready, upload a copy in the required file formats, selecting the performance category.</p>
+                            <p>Sync your track to the Super 8 Music Video</p>
+                            <p>Upload a copy of your video via the website in either MOV of MP4 format. We don’t need massive files, so don’t worry if it's not the best video quality on upload. If you are selected as a finalist we will be in touch and we can get the hi res version then.</p>
                             <p>There is a one off entry fee of $55 per song entered with a discount for APRA members.</p>
                         </div>
                     </div>

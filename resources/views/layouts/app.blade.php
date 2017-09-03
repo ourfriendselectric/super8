@@ -34,7 +34,7 @@
                     <a href="https://www.instagram.com/super8musicvideo/" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
                 </div>
                 <div class="row">
-                    <Termspopup></Termspopup> &#124; <a href="#">join our mailing list</a> &#124; <a href="#">contact us</a>
+                    <a href="/?register=true">Terms &amp; Conditions</a> &#124; <a href="/?register=true">join our mailing list</a> &#124; <a href="mailto:entries@super8musicvideo.com">contact us</a>
                 </div>
             </div>
         </footer>

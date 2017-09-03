@@ -844,7 +844,7 @@ window.Vue = __webpack_require__(51);
 Vue.component('registrations', __webpack_require__(42));
 Vue.component('hero', __webpack_require__(64));
 Vue.component('terms', __webpack_require__(67));
-Vue.component('termspopup', __webpack_require__(70));
+Vue.component('footerlinks', __webpack_require__(82));
 
 var app = new Vue({
   el: '#app'
@@ -47547,7 +47547,19 @@ if (false) {
 }
 
 /***/ }),
-/* 69 */
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47596,22 +47608,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 70 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(69),
+  __webpack_require__(81),
   /* template */
-  __webpack_require__(71),
+  __webpack_require__(83),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/patrickwadden/Code/super8/resources/assets/js/components/termspopup.vue"
+Component.options.__file = "/Users/patrickwadden/Code/super8/resources/assets/js/components/FooterLinks.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] termspopup.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] FooterLinks.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -47620,9 +47632,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3eaf4116", Component.options)
+    hotAPI.createRecord("data-v-41a4d006", Component.options)
   } else {
-    hotAPI.reload("data-v-3eaf4116", Component.options)
+    hotAPI.reload("data-v-41a4d006", Component.options)
   }
 })()}
 
@@ -47630,7 +47642,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 71 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -47642,7 +47654,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.show = !_vm.show
       }
     }
-  }, [_vm._v("terms & conditions")]), _vm._v(" "), (_vm.show) ? _c('div', {
+  }, [_vm._v("terms & conditions")]), _vm._v(" | "), _c('a', {
+    attrs: {
+      "href": "/?register=true"
+    }
+  }, [_vm._v("join our mailing list")]), _vm._v(" | "), _c('a', {
+    attrs: {
+      "href": "mailto:entries@super8musicvideo.com"
+    }
+  }, [_vm._v("contact us")]), _vm._v(" "), (_vm.show) ? _c('div', {
     staticClass: "overlay"
   }, [_c('div', {
     staticClass: "row"
@@ -47661,7 +47681,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3eaf4116", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-41a4d006", module.exports)
   }
 }
 
