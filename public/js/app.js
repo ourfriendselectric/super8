@@ -46977,7 +46977,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "social"
   }, [_c('a', {
     attrs: {
-      "href": "mailto:entries@super8musicvideo.com"
+      "href": "mailto:entries@super8musicvideo.com",
+      "target": "_blank"
     }
   }, [_c('img', {
     attrs: {
@@ -46986,7 +46987,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('a', {
     attrs: {
-      "href": "https://www.facebook.com/Super8MusicVideo/"
+      "href": "https://www.facebook.com/Super8MusicVideo/",
+      "target": "_blank"
     }
   }, [_c('img', {
     attrs: {
@@ -46995,7 +46997,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('a', {
     attrs: {
-      "href": "https://www.instagram.com/super8musicvideo/"
+      "href": "https://www.instagram.com/super8musicvideo/",
+      "target": "_blank"
     }
   }, [_c('img', {
     attrs: {
