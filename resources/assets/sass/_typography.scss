@@ -1,26 +1,41 @@
 @font-face {
   font-family: 'Blacksword';
+  src: url('/fonts/Blacksword.eot');
+  src: url('/fonts/Blacksword.woff2') format('woff2'),
+       url('/fonts/Blacksword.woff') format('woff'),
+       url('/fonts/Blacksword.ttf') format('truetype'),
+       url('/fonts/Blacksword.svg#Blacksword') format('svg'),
+       url('/fonts/Blacksword.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 300;
-  src: local('Blacksword'), local('Blacksword'), url(/fonts/Blacksword.otf) format('otf');
 }
 .blacksword {
 	font-family: 'Blacksword';
 }
 @font-face {
   font-family: 'Eagle-Light';
+  src: url('/fonts/Eagle-Light.eot');
+  src: url('/fonts/Eagle-Light.woff2') format('woff2'),
+       url('/fonts/Eagle-Light.woff') format('woff'),
+       url('/fonts/Eagle-Light.ttf') format('truetype'),
+       url('/fonts/Eagle-Light.svg#Eagle-Light') format('svg'),
+       url('/fonts/Eagle-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 300;
-  src: local('Eagle-Light'), local('Eagle-Light'), url(/fonts/Eagle-Light.otf) format('otf');
 }
 .eagle-light {
 	font-family: 'Eagle-Light';
 }
 @font-face {
   font-family: 'AachenStd-Bold';
+  src: url('/fonts/AachenStd-Bold.eot');
+  src: url('/fonts/AachenStd-Bold.woff2') format('woff2'),
+       url('/fonts/AachenStd-Bold.woff') format('woff'),
+       url('/fonts/AachenStd-Bold.ttf') format('truetype'),
+       url('/fonts/AachenStd-Bold.svg#AachenStd-Bold') format('svg'),
+       url('/fonts/AachenStd-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 300;
-  src: local('AachenStd-Bold'), local('AachenStd-Bold'), url(/fonts/AachenStd-Bold.otf) format('otf');
 }
 .aachenstd-bold {
 	font-family: 'AachenStd-Bold';
