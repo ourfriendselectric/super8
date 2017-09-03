@@ -76,9 +76,9 @@ class RegistrationController extends Controller
         $code = str_random(10);
         $registration->code = $code;
 
-        $registration->save();
-
         Mail::to($request->email)->send(new Registered);
+
+        $registration->save();
 
         return response()->json([
             'code' => $code
