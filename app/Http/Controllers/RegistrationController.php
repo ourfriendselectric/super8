@@ -78,7 +78,7 @@ class RegistrationController extends Controller
 
         $registration->save();
 
-        //Mail::to($request->email)->send(new Registered);
+        Mail::to($request->email)->send(new Registered);
 
         return response()->json([
             'code' => $code

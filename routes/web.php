@@ -11,6 +11,12 @@
 |
 */
 
+use App\Order;
+use App\Mail\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Controller;
+
 Route::get('/', function () {
     return view('home');
 });

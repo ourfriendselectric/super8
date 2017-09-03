@@ -28,6 +28,7 @@ class Registered extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.registered');
+        return $this->subject('Thank you and good luck')
+                    ->view('emails.registered');
     }
 }
