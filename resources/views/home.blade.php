@@ -13,7 +13,7 @@
 
             <div class="rotate">
                 <div class="dates">
-                    <span class="title">Entries Now Open</span> <span class="date">Deadline November 1<sup>st</sup></span>
+                    <span class="title">Entries Now Open</span> <span class="date">Deadline January 15<sup>th</sup></span>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                             <p>We have recorded a video for you to create the music for. You then get to keep it if you win.</p>
                             <p>It’s pretty simple and the prize pool is awesome.</p>
                             <p>No matter how you play, who you play with or the genre you dig you’re eligible. Basically we’re after anyone who can create an original piece of music while being mindful that it complements the video we’ve shot.</p>
-                            <p>Super 8 culminates with a live event experience with the short-listed finalists either playing live to the video on the night or, if based on your musical approach and output you can’t perform live, a playback in front of a panel of esteemed industry judges. The event will take place at one of Sydney’s leading independent music venues in late November 2017.</p>
+                            <p>Super 8 culminates with a live event experience with the short-listed finalists either playing live to the video on the night or, if based on your musical approach and output you can’t perform live, a playback in front of a panel of esteemed industry judges. The event will take place at one of Sydney’s leading independent music venues in Feb 2018.</p>
                         </div>
                     </div>
                 </div>

@@ -35,7 +35,7 @@
                     <span class="triple">(b) Complete the Entry Form located at super8musicvideo.com</span>
                     <span class="triple">(c) Pay the Entry Fee as outlined in the entry form on super8musicvideo.com</span>
                     <span class="triple">(d) All Entry Fees are non-cancellable and are non-refundable.</span>
-                    <span class="triple">(e) Upload the Song correctly via our Upload Form (super8musicvideo.com) by 11:59PM Australian Eastern Daylight Time (2359 AEDT) Wednesday 1st November 2016.</span>
+                    <span class="triple">(e) Upload the Song correctly via our Upload Form (super8musicvideo.com) by 11:59PM Australian Eastern Daylight Time (2359 AEDT) January 15th 2018.</span>
                     <span class="triple">(f) Super 8 accepts no responsibility for any Entry Form or Song that is submitted after the Cut Off Date or not uploaded correctly to Super 8 or is otherwise damaged.</span>
         </p> 
 
@@ -165,13 +165,13 @@
         <p>
             <span class="single">17. Super 8 Important Dates </span>
             <span class="single">Super 8 agrees to the following dates:</span>
-                <span class="double">&bull; 1st November 2017</span>
+                <span class="double">&bull; 1st November 2018</span>
                 <span class="double">Super 8 must receive the Song by 11:59 pm Australian Eastern Daylight Time (23:59 AEDT) on 1st November 2017</span>
                 <span class="double">&bull; on or before 15 November 2017</span>
                 <span class="double">If the Song is Short-Listed, Super 8 will advise the Songwriter on or before 15 November 2017</span>
                 <span class="double">If the Song is selected as a finalist, Super 8 requires the Songwriter to provide the ‘Additional Materials’, as set out in Entry Guidelines, on or before 20 November 2017 Finalist Announcement. </span>
-                <span class="double">&bull; 29 November 2017 </span>
-                <span class="double">Event.</span>
+                <span class="double">&bull; 2017 Finalist Announcement </span>
+                <span class="double">February 2017 Event.</span>
         </p>
 
         <p>
@@ -186,7 +186,7 @@
             <span class="single">Songwriter means the person(s) who created and hold all rights to the Song and are authorised to submit the Song to Super 8 pursuant to these Terms and Conditions (and their agents and assignees).  Reference to a single Songwriter includes all Songwriters &amp; Artists relevant to the Song.</span>
             <span class="single">Non-Exclusive License means an Non-Exclusive License throughout the universe, in perpetuity, to distribute, license and otherwise exploit the Song, or any part of the Song, in any and all media, whether now known or hereafter devised, including, without limitation, theatrical; Non-theatrical; television (all forms including free, pay, terrestrial, cable, and satellite); pay-per-view, video-on- demand, subscription-video-on-demand, and near-video-on-demand; home video (all forms including vinyl records, CD’s, Streaming Services, videocassettes, DVD, Blu-Ray, and all other types of ideograms, or other analogous home video technology, and including all social, digital and OTT platforms whether now known or hereafter devised); electronic rental, electronic sell-through, download to own, and all other forms of electronic delivery including internet, online, and mobile transmission by any and all means, method, process or device now known or hereafter devised; hotel, airline and ship rights; and all advertising, publicity and promotional rights (including trailers, clips and excerpts).</span>
             <span class="single">Super 8 is the intellectual property of Our Friends Electric Pty Ltd. ABN 45 160 616 482.</span>
-            <span class="single">Super 8 means the Super 8 Competition &amp; Event program scheduled for Wednesday 29 November 2017.</span>
+            <span class="single">Super 8 means the Super 8 Competition &amp; Event program scheduled for Wednesday February 2017.</span>
             <span class="single">Super 8 Acceptance Criteria means the elements set out in section 1 of these Terms and Conditions that all Songs must satisfy to be accepted by Super 8 as an entry into Super 8.</span>
             <span class="single">Super 8 Finalist means any of the Songs that have been selected to premiere at Super 8.</span>
             <span class="single">Super 8 Shortlist means one of the Songs that have been selected by Super 8 to progress to the second round of judging.</span>
