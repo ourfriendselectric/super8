@@ -13,7 +13,7 @@
 
             <div class="rotate">
                 <div class="dates">
-                    <span class="title">Entries Now Open</span> <span class="date">Deadline January 15<sup>th</sup></span>
+                    <span class="title">Entries Now Open</span> <span class="date">Deadline January 29<sup>th</sup></span>
                 </div>
             </div>
 
