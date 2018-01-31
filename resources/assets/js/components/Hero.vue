@@ -16,13 +16,16 @@
                     <Watch />
                 </div>
                 <div class="step download">
-                    <Register />
+                    <div class="trigger">
+                        <img src="/images/download.png" alt="Download &amp; Register">
+                        <button class="btn small black">Registrations Closed</button>
+                    </div>
                 </div>
                 <div class="step upload">
-                    <Upload 
-                        :url="url" 
-                        :paypal="paypal" 
-                    />
+                    <div class="trigger">
+                        <img src="/images/upload.png" alt="Upload your track">
+                        <button class="btn small black">Entries Closed</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,9 +40,7 @@
 
 <script>
 
-    import Register from './Register.vue'
     import Watch from './Watch.vue'
-    import Upload from './Upload.vue'
 
     export default {
 
@@ -61,9 +62,7 @@
         },
 
         components: {
-            Register,
             Watch,
-            Upload,
         },
 
         mounted: function () {
