@@ -3,104 +3,194 @@
 @section('content')
 
     <div class="content">
-        
-        <Hero 
-            url="{{ env('APP_URL') }}"
-            paypal="{{ env('PAYPAL_URL') }}"
-        ></Hero>
 
-        <div class="banner">
-
-            <div class="rotate">
-                <div class="dates">
-                    <span class="title">Entry is now closed</span>
+        <div class="winner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1>2018 Winner</h1>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <img src="http://via.placeholder.com/350x350" alt="" class="img-responsive">
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>Tandem Circuit</h2>
+                                <p>Tandem Circuit is the solo project of Sydney-based songwriter/producer Tim Curtin. Growing up in Coffs Harbour, Tim drew inspiration from his dad's diverse music collection, where he began developing a feel for the 'textures' of sounds. This 'texture-based' approach to songwriting and production allows him to create songs that are uniquely immersive and evocative.</p>
+                            </div>
+                        </div>
+                        <div class="row video">
+                            <div class="col-xs-12">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="fill"></div>
-
         </div>
 
         <div class="details">
-            <section class="what">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <img src="/images/lightning.png" alt="" class="lightning">
-                            <h2>What is Super 8</h2>
-                            <p>Super 8 is a music based composition, competition.</p>
-                            <p>Rolls off the tongue doesn’t it.</p>
-                            <p>So what are we on about?</p>
-                            <p>We have recorded a video for you to create the music for. You then get to keep it if you win.</p>
-                            <p>It’s pretty simple and the prize pool is awesome.</p>
-                            <p>No matter how you play, who you play with or the genre you dig you’re eligible. Basically we’re after anyone who can create an original piece of music while being mindful that it complements the video we’ve shot.</p>
-                            <p>Super 8 culminates with a live event experience with the short-listed finalists either playing live to the video on the night or, if based on your musical approach and output you can’t perform live, a playback in front of a panel of esteemed industry judges. The event will take place at one of Sydney’s leading independent music venues in Feb 2018.</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <img src="/images/lightning.png" alt="" class="lightning">
+                        <h1>What is Super 8</h1>
+                        <p>Super 8 is a music based composition, competition.<br/>Rolls off the tongue doesn’t it.</p>
+                        <p>In 2017 we recorded a music video with no sound and put the challenge out there for
+                        Australian artists to write and record a track based around the video.</p>
+                        <p>Entrants then had to track their original song to the video and submit it via our site.</p>
+                        <p>Four finalists and four runners up were selected for a showcase event hosted by KLP
+                        with the finalists battling it out with live performances played to the video.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="details alt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <img src="/images/lightning.png" alt="" class="lightning">
+                        <h1>The Judges</h1>
+                        <div class="row profiles">
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <section class="rules">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <img src="/images/lightning.png" alt="" class="lightning">
-                            <h2>The Rules</h2>
-                            <p>Your song must be an original composition and not be available publicly to listen to or download until the day after the live final.</p>
-                            <p>As a result it cannot have been entered into another competition prior to Super 8.<br/>
-                            Please mix, master and sync your song to the video prior to upload.<br/>
-                            Super 8 is open to Australian Citizens and Permanent Residents.<br/>
-                            Please see the full list of terms of conditions via the link below.</p>
+        <div class="details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <img src="/images/lightning.png" alt="" class="lightning">
+                        <h1>The Prize</h1>
+                        <p>$2000 cash!<br />
+                        The music video - yours to keep no strings attached<br />
+                        Your next EP, Single or Album designed by the Our Friends Electric Creative Studio<br />
+                        Two days in a recording studio with Karl Cash to get your next EP, Single or Album underway!<br />
+                        A Promo Photoshoot</p>
+                        <div class="row">
+                            <img src="/images/download.png" alt="Watch" class="icon" />
+                        </div>
+                        <a href="#" class="register">Register Your Details For Super 8 2019</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="details alt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <img src="/images/lightning.png" alt="" class="lightning">
+                        <h1>2018 Finalists</h1>
+                        <div class="row finalists">
+                            <div class="col-sm-6 finalist">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 finalist">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-sm-offset-3 finalist">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <section class="how">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <img src="/images/lightning.png" alt="" class="lightning">
-                            <h2>How To Enter</h2>
-                            <p>Register &amp; download a copy of the music video via the link at the top of the page.<p>
-                            <p>Sync your track to the Super 8 Music Video</p>
-                            <p>Upload a copy of your video via the website in either MOV of MP4 format. We don’t need massive files, so don’t worry if it's not the best video quality on upload. If you are selected as a finalist we will be in touch and we can get the hi res version then.</p>
-                            <p>There is a one off entry fee of $55 per song entered with a discount for APRA members.</p>
+        <div class="details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <img src="/images/lightning.png" alt="" class="lightning">
+                        <h1>Runners Up</h1>
+                        <div class="row profiles">
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
+                            <div class="profile">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <h3>name</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <section class="prizes">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <img src="/images/lightning.png" alt="" class="lightning">
-                            <h2>Judges &amp; Prizes</h2>
-                            <p>1. Perform Live at Super 8<br/>
-                            2. The music video - yours to keep no strings attached<br/>
-                            3. Your next EP, Single or Album designed by the Our Friends Electric Creative Studio - this includes designs for merchandise and your branding - again yours to keep no strings attached<br/>
-                            4. Two days in a recording studio to get your next EP, Single or Album underway!<br/>
-                            5. Two days of Mixing, Mastering or Recording with one of our judges<br/>
-                            7. Promo Photoshoot <br/>
-                            6. $2000 cash!<br/></p>
-                            <p>Stay tuned for the Judges Announcement. Sign up to our mailing list &amp; follow us on Facebook &amp; Instagram for updates.</p>
-                        </div>
-                    </div>
-                    <div class="row logos">
-                        <div class="col-md-10 col-md-offset-1">
-                            <a href="http://ourfriendselectric.com.au" target="_blank" class="logo">
-                                <img class="ofe" src="/images/logos/ofe.png" />
-                                <p>Foundation Partner</p>
+        <div class="details alt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <img src="/images/lightning.png" alt="" class="lightning">
+                        <p class="h1">FOLLOW US ON INSTAGRAM @SUPER8MUSICVIDEO</p>
+                        <div class="row socials">
+                            <a href="#">
+                                <img src="http://via.placeholder.com/100x100" alt="">
                             </a>
-                            <a href="http://apraamcos.com.au/" target="_blank" class="logo">
-                                <img class="apra" src="/images/logos/apra.png" />
-                                <p>Supporting Partner</p>
+                            <a href="#">
+                                <img src="http://via.placeholder.com/100x100" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="http://via.placeholder.com/100x100" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
 
     </div>

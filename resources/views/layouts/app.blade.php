@@ -34,6 +34,19 @@
 </head>
 <body class="@yield('body_class')">
     <div id="app">
+    
+        <header>
+            <div class="super8">
+                <img src="/images/logo.png" alt="Super8" width="190px">
+            </div>
+
+            <div class="social">
+                <a href="mailto:entries@super8musicvideo.com" target="_blank"><img src="/images/email.png" alt="Email"></a>
+                <a href="https://www.facebook.com/Super8MusicVideo/" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/super8musicvideo/" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+            </div>
+        </header>
+
         @yield('content') 
 
         <footer>

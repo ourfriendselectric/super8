@@ -7,12 +7,11 @@ $rotation: -6deg;
 }
 
 header {
-	min-height: 800px;
-	background-size: cover;
 	position: relative;
-	padding: 50px 0 150px;
+	padding: 50px 0;
+	border-bottom: 10px solid $super8-red;
 	@media (min-width: $screen-sm-min) {
-		padding: 50px 0 400px;
+
 	}
 	@media (min-width: $screen-md-min) {
 		
@@ -230,10 +229,11 @@ header {
 .details { 
 	position: relative;
 	z-index: 150;
-	padding-top: 30px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 	text-align: center;
 	font-family: AachenStd-Bold;
-	color: #000;
+	color: $super8-white;
 	h2 {
 		color: $super8-red;
 	}
@@ -246,31 +246,56 @@ header {
 		}
 	}
 
-	.social {
+	.socials {
 		margin-top: 50px;
 		width: 100%;
+		text-align: center;
 
 		a {
 			display: inline-block;
 			padding: 0 10px;
 			img {
-				width: 33px;
+				// width: 33px;
 			}
 		}
 	}
+
+	.finalists {
+		.finalist {
+			margin-bottom: 30px;
+		}
+	}
+
+	.profiles {
+		.profile {
+			display: inline-block;
+			width: 24%;
+			margin-bottom: 20px;
+		}
+	}
+
+	.icon {
+		margin-top: 20px;
+		max-width: 110px;
+	}
+
+	.register {
+		margin-top: 20px;
+		display: inline-block;
+		background: $super8-black;
+		color: $super8-white;
+		text-transform: uppercase;
+		padding: 5px 10px 2px 10px;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&.alt {
+		background: $super8-black;
+	}
 }
 
-.what,
-.how {
-	padding: 50px 0;
-}
-
-.rules,
-.prizes {
-	background: $super8-black;
-	color: $super8-orange;
-	padding: 50px 0;
-}
 
 .social {
 	margin: 20px 0 40px 0;
