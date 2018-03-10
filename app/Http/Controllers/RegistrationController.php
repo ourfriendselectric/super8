@@ -76,7 +76,7 @@ class RegistrationController extends Controller
         $code = str_random(10);
         $registration->code = $code;
 
-        Mail::to($request->email)->send(new Registered);
+        // Mail::to($request->email)->send(new Registered);
 
         $registration->save();
 
@@ -143,7 +143,7 @@ class RegistrationController extends Controller
 
         return response()->json([
             'id' => $registration->id,
-            'paid' => $registration->paid,
+            'paid' => $registration->hasPaid(),
             'email' => $registration->email,
             'code' => $registration->code,
         ]);
@@ -164,12 +164,13 @@ class RegistrationController extends Controller
             return response('The PayPal response code does not match our records.', 500);
         }
 
-        $registration->paid = true;
-        $registration->save();
+        $year = Setting::Where('name', 'paying_year')->firstOrFail();
+        $paid = new App\Paid(['year' => $year->value]);
+        $registration->paid()->save($paid);
 
         return response()->json([
             'id' => $registration->id,
-            'paid' => $registration->paid,
+            'paid' => $registration->hasPaid(),
             'email' => $registration->email,
             'code' => $registration->code,
         ]);

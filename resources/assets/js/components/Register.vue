@@ -1,8 +1,10 @@
 <template>
     <div class="register">
         <div class="trigger" v-on:click="show=!show">
-            <img src="/images/download.png" alt="Download &amp; Register">
-            <button class="btn small black">Download &amp; Register</button>
+            <div class="row">
+                <img src="/images/download.png" alt="Download &amp; Register">
+            </div>
+            <button class="btn small black">Register Your Details For Super 8 2019</button>
         </div>
 
         <div class="overlay" v-if="show">
@@ -52,16 +54,15 @@
                     <input type="checkbox" name="accept" id="accept" :checked="form.accept" v-model="form.accept" /> <label for="accept">I have read &amp; agreed to the Terms &amp; Conditions</label><p class="error" v-if="errors.accept !== ''">{{errors.accept}}</p>
                 </div>
 
-                <button class="btn red large" v-if="!saving">Register &amp; Download</button>
+                <button class="btn red large" v-if="!saving">Register for Super 8 2019</button>
                 <div class="saving" v-if="saving"><div class="spinner"></div></div>
                 <p v-if="error" class="error" style="margin-top: 5px;">We were unable to register you. Please check the form above for errors.</p>
             </form>
 
             <div v-if="success">
                 <h2>Thank you for registering</h2>
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_P4hYwff3T0?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
-                </div>
+                <p>We'll keep you updated with any news and announcments we have. Watch this space.</p>
+                <p>In the mean time, check out this years winner, Tandem Circuit.</p>
                 <a href="/video/super8musicvideo.mp4" class="btn red large" download>Download Video</a>
             </div>
         </div>

@@ -226,9 +226,24 @@ header {
 	width: 45px;
 }
 
+.winner {
+	background: $super8-black;
+  	color: $super8-white;
+
+	img {
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+	}
+
+  	.video {
+  		margin-top: 35px;
+  		margin-bottom: 50px;
+  	}
+}
+
 .details { 
 	position: relative;
-	z-index: 150;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	text-align: center;
@@ -247,30 +262,58 @@ header {
 	}
 
 	.socials {
-		margin-top: 50px;
-		width: 100%;
 		text-align: center;
+
+		.h1 {
+			margin-bottom: 50px;
+			font-size: 22px;
+			@media (min-width: $screen-sm-min) {
+				font-size: 36px;
+			}
+		}
 
 		a {
 			display: inline-block;
 			padding: 0 10px;
 			img {
-				// width: 33px;
+				height: auto;
+				width: 80px;
+				@media (min-width: $screen-sm-min) {
+					font-size: 36px;
+				}
 			}
 		}
 	}
 
 	.finalists {
 		.finalist {
-			margin-bottom: 30px;
+			margin-bottom: 50px;
+			@media (min-width: $screen-sm-min) {
+				margin-bottom: 30px;
+			}
 		}
 	}
 
 	.profiles {
 		.profile {
 			display: inline-block;
-			width: 24%;
 			margin-bottom: 20px;
+			
+			width: 40%;
+			@media (min-width: $screen-sm-min) {
+				width: 24%;
+			}
+
+			h3 {
+				font-size: 18px;
+			}
+
+			img {
+				width: 100px;
+				@media (min-width: $screen-sm-min) {
+					// width: 24%;
+				}
+			}
 		}
 	}
 
@@ -279,23 +322,10 @@ header {
 		max-width: 110px;
 	}
 
-	.register {
-		margin-top: 20px;
-		display: inline-block;
-		background: $super8-black;
-		color: $super8-white;
-		text-transform: uppercase;
-		padding: 5px 10px 2px 10px;
-		&:hover {
-			text-decoration: none;
-		}
-	}
-
 	&.alt {
 		background: $super8-black;
 	}
 }
-
 
 .social {
 	margin: 20px 0 40px 0;

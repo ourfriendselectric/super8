@@ -29,4 +29,16 @@
 		margin-top: 0;
 		margin-bottom: 20px;
 	}
+
+	.btn {
+		margin-top: 20px;
+		display: inline-block;
+		background: $super8-black;
+		color: $super8-white;
+		text-transform: uppercase;
+		padding: 5px 10px 2px 10px;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }

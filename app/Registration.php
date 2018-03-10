@@ -20,15 +20,6 @@ class Registration extends Model
     ];
 
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'paid' => 'boolean',
-    ];
-
-    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
@@ -36,6 +27,14 @@ class Registration extends Model
     protected $hidden = [
         'remember_token',
     ];
+
+    /**
+     * Get the paid for the user.
+     */
+    public function paid()
+    {
+        return $this->hasOne('App\Paid');
+    }
 
     /**
      * Get the song for the user.
@@ -51,5 +50,13 @@ class Registration extends Model
     public function video()
     {
         return $this->hasOne('App\Video');
+    }
+
+    /**
+     * Get the song for the user.
+     */
+    public function hasPaid()
+    {
+        return $this->paid ? true : false;
     }
 }

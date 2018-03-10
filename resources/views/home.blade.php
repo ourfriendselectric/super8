@@ -11,7 +11,7 @@
                         <h1>2018 Winner</h1>
                         <div class="row">
                             <div class="col-sm-3">
-                                <img src="http://via.placeholder.com/350x350" alt="" class="img-responsive">
+                                <img src="/images/2018/post/tandem_circuit.jpg" alt="" class="img-responsive">
                             </div>
                             <div class="col-sm-9">
                                 <h2>Tandem Circuit</h2>
@@ -55,32 +55,32 @@
                         <h1>The Judges</h1>
                         <div class="row profiles">
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="images/2018/post/joel_farland.jpg" alt="">
+                                <h3>Joel Farland</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="images/2018/post/mark_callaghan.jpg" alt="">
+                                <h3>Mark Callaghan</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="images/2018/post/steve_balbi.jpg" alt="">
+                                <h3>Steve Balbi</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="images/2018/post/stav_yiannoukas.jpg" alt="">
+                                <h3>Stav Yiannoukas</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="images/2018/post/emily_collins.jpg" alt="">
+                                <h3>Emily Collins</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="images/2018/post/karl_cashwell.jpg" alt="">
+                                <h3>Karl Cashwell</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="images/2018/post/klp.jpg" alt="">
+                                <h3>KLP (Host)</h3>
                             </div>
                         </div>
                     </div>
@@ -99,10 +99,11 @@
                         Your next EP, Single or Album designed by the Our Friends Electric Creative Studio<br />
                         Two days in a recording studio with Karl Cash to get your next EP, Single or Album underway!<br />
                         A Promo Photoshoot</p>
-                        <div class="row">
+{{--                         <div class="row">
                             <img src="/images/download.png" alt="Watch" class="icon" />
-                        </div>
-                        <a href="#" class="register">Register Your Details For Super 8 2019</a>
+                        </div> --}}
+                        <Register />
+                        {{-- <a href="#" class="register">Register Your Details For Super 8 2019</a> --}}
                     </div>
                 </div>
             </div>
@@ -176,8 +177,8 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <img src="/images/lightning.png" alt="" class="lightning">
-                        <p class="h1">FOLLOW US ON INSTAGRAM @SUPER8MUSICVIDEO</p>
                         <div class="row socials">
+                            <p class="h1">FOLLOW US ON INSTAGRAM @SUPER8MUSICVIDEO</p>
                             <a href="#">
                                 <img src="http://via.placeholder.com/100x100" alt="">
                             </a>
