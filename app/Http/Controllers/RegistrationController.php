@@ -30,7 +30,7 @@ class RegistrationController extends Controller
                 'artist' => $registration->artist,
                 'location' => $registration->location,
                 'code' => $registration->code,
-                'paid' => $registration->paid,
+                'paid' => $registration->hasPaid(),
                 'song' => isset($registration->song) ? $registration->song->path : '',
                 'video' => isset($registration->video) ? $registration->video->path : '',
             ];

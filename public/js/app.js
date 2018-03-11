@@ -32350,7 +32350,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_vm._m(0), _vm._v(" "), _c('button', {
-    staticClass: "btn small black"
+    staticClass: "btn small black uppercase"
   }, [_vm._v("Register Your Details For Super 8 2019")])]), _vm._v(" "), (_vm.show) ? _c('div', {
     staticClass: "overlay"
   }, [_c('span', {
@@ -32599,7 +32599,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("I have read & agreed to the Terms & Conditions")]), (_vm.errors.accept !== '') ? _c('p', {
     staticClass: "error"
   }, [_vm._v(_vm._s(_vm.errors.accept))]) : _vm._e()]), _vm._v(" "), (!_vm.saving) ? _c('button', {
-    staticClass: "btn red large"
+    staticClass: "btn black large uppercase"
   }, [_vm._v("Register for Super 8 2019")]) : _vm._e(), _vm._v(" "), (_vm.saving) ? _c('div', {
     staticClass: "saving"
   }, [_c('div', {
@@ -32609,13 +32609,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "margin-top": "5px"
     }
-  }, [_vm._v("We were unable to register you. Please check the form above for errors.")]) : _vm._e()]) : _vm._e(), _vm._v(" "), (_vm.success) ? _c('div', [_c('h2', [_vm._v("Thank you for registering")]), _vm._v(" "), _c('p', [_vm._v("We'll keep you updated with any news and announcments we have. Watch this space.")]), _vm._v(" "), _c('p', [_vm._v("In the mean time, check out this years winner, Tandem Circuit.")]), _vm._v(" "), _c('a', {
-    staticClass: "btn red large",
-    attrs: {
-      "href": "/video/super8musicvideo.mp4",
-      "download": ""
-    }
-  }, [_vm._v("Download Video")])]) : _vm._e()]) : _vm._e(), _vm._v(" "), (_vm.show) ? _c('div', {
+  }, [_vm._v("We were unable to register you. Please check the form above for errors.")]) : _vm._e()]) : _vm._e(), _vm._v(" "), (_vm.success) ? _c('div', [_c('h2', [_vm._v("Thank you for registering")]), _vm._v(" "), _c('p', [_vm._v("We'll keep you updated with any news and announcments we have. Watch this space.")]), _vm._v(" "), _c('p', [_vm._v("In the mean time, check out this years winner, Tandem Circuit.")])]) : _vm._e()]) : _vm._e(), _vm._v(" "), (_vm.show) ? _c('div', {
     staticClass: "background",
     on: {
       "click": function($event) {

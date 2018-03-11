@@ -99,11 +99,7 @@
                         Your next EP, Single or Album designed by the Our Friends Electric Creative Studio<br />
                         Two days in a recording studio with Karl Cash to get your next EP, Single or Album underway!<br />
                         A Promo Photoshoot</p>
-{{--                         <div class="row">
-                            <img src="/images/download.png" alt="Watch" class="icon" />
-                        </div> --}}
                         <Register />
-                        {{-- <a href="#" class="register">Register Your Details For Super 8 2019</a> --}}
                     </div>
                 </div>
             </div>

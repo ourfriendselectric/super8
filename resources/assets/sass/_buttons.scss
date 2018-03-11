@@ -1,9 +1,15 @@
 .btn {
+	@extend .transition;
     font-family: "aachenstd-bold";
-	@include transition();
-	font-size: 20px;
+    font-size: 20px;
     border-radius: 0;
     border: none;
+    cursor: pointer;
+
+    &.uppercase {
+        text-transform: uppercase;
+    }
+
     &.red {
         background: $super8-red;
         color: $super8-white;
@@ -15,12 +21,8 @@
         background: $super8-black;
         color: $super8-white;
         &:hover {
-            background: $super8-orange;
+            background: $super8-red;
         }
-    }
-
-    &.small {
-        font-size: 15px;
     }
 
     &.outline {
@@ -32,15 +34,17 @@
         }
     }
 
+    &.small {
+        font-size: 15px;
+        padding: 4px 10px 1px 10px;
+        line-height: 30px;
+    }
+
     &.large {
         height: 60px;
         line-height: 60px;
         padding: 0;
-
-        width: 100%;
-        @media (min-width: $screen-sm-min) {
-            width: 335px;
-        }
+        padding: 1px 20px;
     }
 
     &:active {
@@ -48,8 +52,10 @@
             outline: none;
         }
     }
+
     &:focus {
         outline: none;
+        box-shadow: none;
     }
 
 }
