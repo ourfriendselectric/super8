@@ -1,3 +1,8 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @font-face {
   font-family: 'Blacksword';
   src: url('/fonts/Blacksword.eot');
@@ -58,6 +63,9 @@ h1,
 .lightning + h1,
 .lightning + .h1 {
   margin-top: 20px;
+  + p {
+    margin-top: -20px;
+  }
 }
 
 h2,

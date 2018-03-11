@@ -291,6 +291,12 @@ header {
 			@media (min-width: $screen-sm-min) {
 				margin-bottom: 30px;
 			}
+
+			img {
+				@media (min-width: $screen-sm-min) {
+					width: 100px;
+				}
+			}
 		}
 	}
 

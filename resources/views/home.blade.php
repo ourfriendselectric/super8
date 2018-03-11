@@ -117,22 +117,22 @@
                         <h1>2018 Finalists</h1>
                         <div class="row finalists">
                             <div class="col-sm-6 finalist">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="/images/2018/post/lost_in_china.jpg" alt="">
+                                <h3>Lost In China</h3>
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
                                 </div>
                             </div>
                             <div class="col-sm-6 finalist">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="/images/2018/post/truth_ridge.jpg" alt="">
+                                <h3>Truth Ridge</h3>
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-sm-offset-3 finalist">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="/images/2018/post/feb774.jpg" alt="">
+                                <h3>FEB774 (Highly Commended)</h3>
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
                                 </div>
@@ -151,20 +151,20 @@
                         <h1>Runners Up</h1>
                         <div class="row profiles">
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="/images/2018/post/phil_shaw.jpg" alt="">
+                                <h3>Phil Shaw</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="/images/2018/post/loso.jpg" alt="">
+                                <h3>Lo$o</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="/images/2018/post/secret_songs.jpg" alt="">
+                                <h3>Secret Songs</h3>
                             </div>
                             <div class="profile">
-                                <img src="http://via.placeholder.com/100x100" alt="">
-                                <h3>name</h3>
+                                <img src="/images/2018/post/francis_byrne.jpg" alt="">
+                                <h3>Francis Byrne</h3>
                             </div>
                         </div>
                     </div>
@@ -179,13 +179,13 @@
                         <img src="/images/lightning.png" alt="" class="lightning">
                         <div class="row socials">
                             <p class="h1">FOLLOW US ON INSTAGRAM @SUPER8MUSICVIDEO</p>
-                            <a href="#">
+                            <a href="http://www.ourfriendselectric.com.au" target="_blank">
                                 <img src="http://via.placeholder.com/100x100" alt="">
                             </a>
-                            <a href="#">
+                            <a href="http://apraamcos.com.au/" target="_blank">
                                 <img src="http://via.placeholder.com/100x100" alt="">
                             </a>
-                            <a href="#">
+                            <a href="https://www.younghenrys.com/" target="_blank">
                                 <img src="http://via.placeholder.com/100x100" alt="">
                             </a>
                         </div>
