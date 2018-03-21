@@ -21,7 +21,7 @@
                         <div class="row video">
                             <div class="col-xs-12">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gwm5RbJ26P0"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -116,21 +116,21 @@
                                 <img src="/images/2018/post/lost_in_china.jpg" alt="">
                                 <h3>Lost In China</h3>
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UZNqzjSNpm8"></iframe>
                                 </div>
                             </div>
                             <div class="col-sm-6 finalist">
                                 <img src="/images/2018/post/truth_ridge.jpg" alt="">
                                 <h3>Truth Ridge</h3>
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aMGpGnay4vA"></iframe>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-sm-offset-3 finalist">
                                 <img src="/images/2018/post/feb774.jpg" alt="">
                                 <h3>FEB774 (Highly Commended)</h3>
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8"></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WHmYpvSayEU"></iframe>
                                 </div>
                             </div>
                         </div>
