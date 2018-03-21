@@ -176,13 +176,13 @@
                         <div class="row socials">
                             <p class="h1">FOLLOW US ON INSTAGRAM @SUPER8MUSICVIDEO</p>
                             <a href="http://www.ourfriendselectric.com.au" target="_blank">
-                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <img src="/images/social_ofe.png" alt="">
                             </a>
                             <a href="http://apraamcos.com.au/" target="_blank">
-                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <img src="/images/social_apra.png" alt="">
                             </a>
                             <a href="https://www.younghenrys.com/" target="_blank">
-                                <img src="http://via.placeholder.com/100x100" alt="">
+                                <img src="/images/social_young_henrys.png" alt="">
                             </a>
                         </div>
                     </div>
