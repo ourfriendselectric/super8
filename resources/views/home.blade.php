@@ -93,12 +93,12 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <img src="/images/lightning.png" alt="" class="lightning">
-                        <h1>The Prize</h1>
+                        <h1>This Years Winner Received</h1>
                         <p>$2000 cash!<br />
-                        The music video - yours to keep no strings attached<br />
-                        Your next EP, Single or Album designed by the Our Friends Electric Creative Studio<br />
-                        Two days in a recording studio with Karl Cash to get your next EP, Single or Album underway!<br />
-                        A Promo Photoshoot</p>
+                        The Super 8 Music Video, theirs to keep no strings attached<br />
+                        Two days in a recording studio with Karl Cash to get their next EP, Single or Album underway!<br />
+                        Their next EP, Single or Album designed by the Our Friends Electric Creative Studio<br />
+                        A Promo Photoshoot to get them press ready</p>
                         <Register />
                     </div>
                 </div>
